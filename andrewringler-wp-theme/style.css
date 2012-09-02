@@ -99,11 +99,12 @@ button,
 input,
 select,
 textarea {
-	color: #404040;
-	font-family: sans-serif;
+	color: #333333;
+	font-family: 'Merriweather', serif;
+	font-weight: 400;
 	font-size: 16px;
 	font-size: 1.6rem;
-	line-height: 1.5;
+	line-height: 1.8;
 }
 
 /* Headings */
@@ -313,6 +314,8 @@ textarea {
 /* Links */
 a {
 	color: royalblue;
+	font-weight: bold;
+	text-decoration: none;
 }
 a:visited {
 	color: purple;

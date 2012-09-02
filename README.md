@@ -14,8 +14,14 @@ This is a work in progress and you probably have no reason at all to be here if 
     > rvm use 1.9.3
     
 * install librarian: gem install librarian   (https://github.com/applicationsonline/librarian)
+* vagrant up
+* visit http://192.168.33.20/ and create a wordpress admin user
+* delete hello world post
+* export wordpress content from andrewringler.com
+* import into wordpress at http://192.168.33.20/
+* activate andrewringler theme
 
-
-## Inspirations
+## Inspirations / References
 
 * https://github.com/lewg/wordpress-vagrant
+* https://github.com/applicationsonline/librarian

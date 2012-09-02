@@ -10,6 +10,7 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
+<link href='http://fonts.googleapis.com/css?family=Merriweather:700,400' rel='stylesheet' type='text/css'>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
 <title><?php
