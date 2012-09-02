@@ -6,36 +6,7 @@
 				
 				    <div id="main" class="eightcol first clearfix" role="main">
 				
-					    <?php if (is_category()) { ?>
-						    <h1 class="archive-title h2">
-							    <span><?php _e("Posts Categorized:", "bonestheme"); ?></span> <?php single_cat_title(); ?>
-					    	</h1>
-					    
-					    <?php } elseif (is_tag()) { ?> 
-						    <h1 class="archive-title h2">
-							    <span><?php _e("Posts Tagged:", "bonestheme"); ?></span> <?php single_tag_title(); ?>
-						    </h1>
-					    
-					    <?php } elseif (is_author()) { ?>
-						    <h1 class="archive-title h2">
-						    	<span><?php _e("Posts By:", "bonestheme"); ?></span> <?php get_the_author_meta('display_name'); ?>
-						    </h1>
-					    
-					    <?php } elseif (is_day()) { ?>
-						    <h1 class="archive-title h2">
-	    						<span><?php _e("Daily Archives:", "bonestheme"); ?></span> <?php the_time('l, F j, Y'); ?>
-						    </h1>
-		
-		    			<?php } elseif (is_month()) { ?>
-			    		    <h1 class="archive-title h2">
-				    	    	<span><?php _e("Monthly Archives:", "bonestheme"); ?></span> <?php the_time('F Y'); ?>
-					        </h1>
-					
-					    <?php } elseif (is_year()) { ?>
-					        <h1 class="archive-title h2">
-					    	    <span><?php _e("Yearly Archives:", "bonestheme"); ?></span> <?php the_time('Y'); ?>
-					        </h1>
-					    <?php } ?>
+						<h1 class="archive-title h2"><?php post_type_archive_title(); ?></h1>
 
 					    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
@@ -45,13 +16,11 @@
 							
 							    <h3 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 							
-							    <p class="meta"><?php _e("Posted", "bonestheme"); ?> <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time('F jS, Y'); ?></time> <?php _e("by", "bonestheme"); ?> <?php the_author_posts_link(); ?> <span class="amp">&</span> <?php _e("filed under", "bonestheme"); ?> <?php the_category(', '); ?>.</p>
+							    <p class="meta"><?php _e("Posted", "bonestheme"); ?> <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time('F jS, Y'); ?></time> <?php _e("by", "bonestheme"); ?> <?php the_author_posts_link(); ?>.</p>
 						
 						    </header> <!-- end article header -->
 					
 						    <section class="post-content clearfix">
-						
-							    <?php the_post_thumbnail( 'bones-thumb-300' ); ?>
 						
 							    <?php the_excerpt(); ?>
 					
@@ -65,7 +34,7 @@
 					
 					    <?php endwhile; ?>	
 					
-					        <?php if (function_exists('bones_page_navi')) { // if experimental feature is active ?>
+					        <?php if (function_exists('bones_page_navi')) { // page_navi is active ?>
 						
 						        <?php bones_page_navi(); // use the page navi function ?>
 
@@ -88,7 +57,7 @@
     							    <p><?php _e("Uh Oh. Something is missing. Try double checking things.", "bonestheme"); ?></p>
         						</section>
     	    					<footer class="article-footer">
-    		    				    <p><?php _e("This is the error message in the archive.php template.", "bonestheme"); ?></p>
+    		    				    <p><?php _e("This is the error message in the custom posty type archive template.", "bonestheme"); ?></p>
     			    			</footer>
     				    	</article>
 					

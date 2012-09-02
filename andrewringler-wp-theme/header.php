@@ -1,63 +1,56 @@
-<?php
-/**
- * The Header for our theme.
- *
- * Displays all of the <head> section and everything up till <div id="main">
- *
- * @package andrewringler
- * @since andrewringler 1.0
- */
-?><!DOCTYPE html>
-<html <?php language_attributes(); ?>>
-<head>
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
-<meta name="viewport" content="width=device-width" />
-<title><?php
-	/*
-	 * Print the <title> tag based on what is being viewed.
-	 */
-	global $page, $paged;
+<!doctype html>  
 
-	wp_title( '|', true, 'right' );
-
-	// Add the blog name.
-	bloginfo( 'name' );
-
-	// Add the blog description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		echo " | $site_description";
-
-	// Add a page number if necessary:
-	if ( $paged >= 2 || $page >= 2 )
-		echo ' | ' . sprintf( __( 'Page %s', 'andrewringler' ), max( $paged, $page ) );
-
-	?></title>
-<link href='http://fonts.googleapis.com/css?family=Merriweather:700,400' rel='stylesheet' type='text/css'>
-<link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<!--[if lt IE 9]>
-<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
-<![endif]-->
-
-<?php wp_head(); ?>
-</head>
-
-<body <?php body_class(); ?>>
-<div id="page" class="hfeed site">
-	<?php do_action( 'before' ); ?>
-	<header id="masthead" class="site-header" role="banner">
-		<hgroup>
-			<h1 class="site-title"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-		</hgroup>
-
-		<nav role="navigation" class="site-navigation main-navigation">
-			<h1 class="assistive-text"><?php _e( 'Menu', 'andrewringler' ); ?></h1>
-			<div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'andrewringler' ); ?>"><?php _e( 'Skip to content', 'andrewringler' ); ?></a></div>
-
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-		</nav><!-- .site-navigation .main-navigation -->
-	</header><!-- #masthead .site-header -->
-
-	<div id="main" class="site-main">
+<!--[if lt IE 7]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html <?php language_attributes(); ?> class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--> <html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
+	
+	<head>
+		<meta charset="utf-8">
+		
+		<title><?php wp_title(''); ?></title>
+		
+		<!-- Google Chrome Frame for IE -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		
+		<!-- mobile meta (hooray!) -->
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		
+		<!-- icons & favicons (for more: http://themble.com/support/adding-icons-favicons/) -->
+		<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
+				
+  		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+		
+		<!-- wordpress head functions -->
+		<?php wp_head(); ?>
+		<!-- end of wordpress head -->
+			
+		<!-- drop Google Analytics Here -->
+		<!-- end analytics -->
+		
+	</head>
+	
+	<body <?php body_class(); ?>>
+	
+		<div id="container">
+			
+			<header class="header" role="banner">
+			
+				<div id="inner-header" class="wrap clearfix">
+					
+					<!-- to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> -->
+					<p id="logo" class="h1"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></p>
+					
+					<!-- if you'd like to use the site description you can un-comment it below -->
+					<?php // bloginfo('description'); ?>
+					
+					
+					<nav role="navigation">
+						<?php bones_main_nav(); // Adjust using Menus in Wordpress Admin ?>
+					</nav>
+				
+				</div> <!-- end #inner-header -->
+			
+			</header> <!-- end header -->
