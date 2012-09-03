@@ -20,21 +20,29 @@ This is a work in progress and you probably have no reason at all to be here if 
 * export wordpress content from andrewringler.com
 * import into wordpress at http://192.168.33.20/
 * activate andrewringler theme
-* install https://github.com/creationix/nvm, then
+* install http://compass-style.org/
 
-    > nvm install v0.8.8
+    > gem update
     
-    > nvm use v0.8.8
+    > gem install compass
+
 * then generate CSS
 
-    > node watch.js
+    > 
 
 ## Inspirations / References
 
 * https://github.com/lewg/wordpress-vagrant
 * https://github.com/applicationsonline/librarian
-* https://github.com/corpix/watcherDemo, http://stackoverflow.com/questions/9421375/how-to-use-less-js-with-node-js-to-watch-less-files-in-a-folder
 
 ## TODO
 
-* Replace custom watch script with a custom https://github.com/h5bp/node-build-script or https://github.com/cowboy/grunt
+* Replace custom watch script with a custom
+    
+    https://github.com/h5bp/node-build-script
+    
+    or https://github.com/cowboy/grunt
+    
+    or http://forge.thethemefoundry.com/
+    
+* Should probably switch to twentytwelve when it comes out with WP 3.5

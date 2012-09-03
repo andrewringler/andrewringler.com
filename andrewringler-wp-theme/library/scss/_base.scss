@@ -16,11 +16,10 @@ GENERAL STYLES
 *********************/
 
 body {
-  font-family: 'Merriweather', serif;
-  font-weight: 400;
-	font-size: 16px;
-	line-height: 1.8;
-	color: #333333;
+	font-family: Georgia, serif;
+	font-size: 14px;
+	line-height: 1.5;
+	color: #565656;
 }
 
 /********************
@@ -87,15 +86,17 @@ LINK STYLES
 *********************/
 
 a, a:visited {
-	color: @bones-pink;
+	color: $bones-pink;
 
 	/* on hover */
 	&:hover, &:focus {
-		color: lighten(@bones-pink, 9%);
+		color: lighten($bones-pink, 9%);
 	}
 
 	/* on click */
-	&:active {}
+	&:active {
+
+	}
 
 	/* mobile tap color */
 	&:link {
@@ -190,7 +191,7 @@ and moe scalable.
 			/*
 			remember this is for mobile ONLY, so there's no need
 			to even declare hover styles here, you can do it in
-			the style.less file where it's relevant. We want to
+			the style.scss file where it's relevant. We want to
 			keep this file as small as possible!
 			*/
 			&:hover, &:focus {
@@ -734,9 +735,9 @@ COMMENT FORM STYLES
 				border-color: #fbc2c4;
 				background-color: #f6e7eb;
 				-webkit-box-shadow: none;
-				-moz-box-shadow:    none;
-				-ms-box-shadow:     none;
-				box-shadow:         none;
+				   -moz-box-shadow: none;
+				    -ms-box-shadow: none;
+						box-shadow: none;
 			}
 		}
 
