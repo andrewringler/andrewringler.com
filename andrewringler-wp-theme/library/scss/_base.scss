@@ -16,10 +16,10 @@ GENERAL STYLES
 *********************/
 
 body {
-	font-family: Georgia, serif;
-	font-size: 14px;
-	line-height: 1.5;
-	color: #565656;
+  font-family: 'Merriweather', Georgia, serif;
+	font-size: 16px;
+	line-height: 1.8;
+	color: #333333;
 }
 
 /********************
@@ -86,11 +86,12 @@ LINK STYLES
 *********************/
 
 a, a:visited {
-	color: $bones-pink;
+	color: $bones-blue;
+	text-decoration: none;
 
 	/* on hover */
 	&:hover, &:focus {
-		color: lighten($bones-pink, 9%);
+		color: lighten($bones-blue, 9%);
 	}
 
 	/* on click */
