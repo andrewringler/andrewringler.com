@@ -25,3 +25,4 @@ This is a work in progress and you probably have no reason at all to be here if 
 
 * https://github.com/lewg/wordpress-vagrant
 * https://github.com/applicationsonline/librarian
+* https://github.com/corpix/watcherDemo, http://stackoverflow.com/questions/9421375/how-to-use-less-js-with-node-js-to-watch-less-files-in-a-folder
