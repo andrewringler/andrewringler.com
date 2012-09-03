@@ -88,6 +88,7 @@ LINK STYLES
 a, a:visited {
 	color: $bones-blue;
 	text-decoration: none;
+	font-weight: bold;
 
 	/* on hover */
 	&:hover, &:focus {
