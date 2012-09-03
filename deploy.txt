@@ -1,0 +1,3 @@
+remove Films, Articles & Journal pages
+add main & footer menu with About, & cats: Article, Film, Journal
+
