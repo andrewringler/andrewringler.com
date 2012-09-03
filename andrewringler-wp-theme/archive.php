@@ -7,8 +7,8 @@
 				    <div id="main" class="eightcol first clearfix" role="main">
 				
 					    <?php if (is_category()) { ?>
-						    <h1 class="archive-title h2">
-							    <span><?php _e("Posts Categorized:", "bonestheme"); ?></span> <?php single_cat_title(); ?>
+						    <h1 class="page-title">
+							    <span><?php _e("", "bonestheme"); ?></span> <?php single_cat_title(); ?>
 					    	</h1>
 					    
 					    <?php } elseif (is_tag()) { ?> 
@@ -18,7 +18,7 @@
 					    
 					    <?php } elseif (is_author()) { ?>
 						    <h1 class="archive-title h2">
-						    	<span><?php _e("Posts By:", "bonestheme"); ?></span> <?php get_the_author_meta('display_name'); ?>
+						    	<span><?php _e("Posts By:", "bonestheme"); ?></span> <?php the_author_meta('display_name'); ?>
 						    </h1>
 					    
 					    <?php } elseif (is_day()) { ?>
