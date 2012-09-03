@@ -12,23 +12,24 @@ This is a work in progress and you probably have no reason at all to be here if 
     > rvm install 1.9.3
     
     > rvm use 1.9.3
+* install some gems:
+   
+    > gem update    
+
+    > gem install librarian  // librarian for Vagrant (https://github.com/applicationsonline/librarian)
     
-* install librarian: gem install librarian   (https://github.com/applicationsonline/librarian)
+    > gem install compass    // COMPASS for scss compilation (http://compass-style.org/)
 * vagrant up
 * visit http://192.168.33.20/ and create a wordpress admin user
 * delete hello world post
 * export wordpress content from andrewringler.com
 * import into wordpress at http://192.168.33.20/
-* activate andrewringler theme
-* install http://compass-style.org/
-
-    > gem update
+* activate 'Andrew Ringler 2012' theme
+* generate CSS
     
-    > gem install compass
-
-* then generate CSS
-
-    > 
+    > cd andrewringler-wp-theme/library/scss 
+    
+    > compass watch
 
 ## Inspirations / References
 
@@ -37,7 +38,7 @@ This is a work in progress and you probably have no reason at all to be here if 
 
 ## TODO
 
-* Replace custom watch script with a custom
+* Replace COMPASS watch script with a custom
     
     https://github.com/h5bp/node-build-script
     
