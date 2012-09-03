@@ -1,4 +1,7 @@
+v0.1
 remove Films, Articles & Journal pages
 add main & footer menu with About, & cats: Article, Film, Journal
-
 change posts per page to 10
+install bookTuner
+install PHP Code Widget
+add widget with bookTuner books: <?php if(function_exists('booktuner')) { booktuner(); } ?>

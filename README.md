@@ -47,3 +47,6 @@ This is a work in progress and you probably have no reason at all to be here if 
     or http://forge.thethemefoundry.com/
     
 * Should probably switch to twentytwelve when it comes out with WP 3.5
+* Deploy to production with Capistrano?
+https://github.com/augustash/capistrano-ash/wiki/WordPress-Shared-Hosting-Example
+http://wiki.dreamhost.com/Capistrano
