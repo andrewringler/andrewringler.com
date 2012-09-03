@@ -35,19 +35,6 @@
 					
 					    <?php endwhile; ?>	
 					
-					        <?php if (function_exists('bones_page_navi')) { // if experimental feature is active ?>
-						
-						        <?php bones_page_navi(); // use the page navi function ?>
-						
-					        <?php } else { // if it is disabled, display regular wp prev & next links ?>
-						        <nav class="wp-prev-next">
-							        <ul class="clearfix">
-								        <li class="prev-link"><?php next_posts_link(_e('&laquo; Older Entries', 'bonestheme')) ?></li>
-								        <li class="next-link"><?php previous_posts_link(_e('Newer Entries &raquo;', 'bonestheme')) ?></li>
-							        </ul>
-						        </nav>
-					        <?php } ?>		
-					
 					    <?php else : ?>
 					    
 					        <article id="post-not-found" class="hentry clearfix">
