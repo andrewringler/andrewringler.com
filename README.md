@@ -30,6 +30,16 @@ This is a work in progress and you probably have no reason at all to be here if 
     > cd andrewringler-wp-theme/library/scss 
     
     > compass watch
+    
+## things I haven't automated yet, after vagrant up for the first time do:
+
+    to enable PHP debug:
+    > vagrant ssh
+    > put a .htaccess file in /var/www/wordpress with:
+      # Displaying PHP errors
+      php_flag display_errors on
+      php_value error_reporting 6143    
+    > chmod 644 .htaccess
 
 ## Inspirations / References
 
