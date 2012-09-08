@@ -3,3 +3,11 @@ remove Films, Articles & Journal pages
 add main & footer menu with About, & cats: Article, Film, Journal
 change posts per page to 10
 install FitVids for WordPress and configure with class .format-video
+Add widgets to sidebars:
+  sidebars main:
+    search
+
+  Homepage sidebar:
+    search
+    recently wrote
+    Goodreads widget
