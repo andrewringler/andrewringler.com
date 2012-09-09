@@ -43,7 +43,7 @@
 					<h1 id="logo" class="h1">
 					  <a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a>
 					</h1>
-					<?php if (is_home()) bloginfo('description'); ?>
+					<h2 id="logo-description"><?php if (is_home()) bloginfo('description'); ?></h2>
 					
 					<nav role="navigation">
 						<?php bones_main_nav(); // Adjust using Menus in Wordpress Admin ?>
