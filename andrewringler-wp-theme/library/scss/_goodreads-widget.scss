@@ -1,0 +1,17 @@
+@import "compass/utilities/general/clearfix";
+
+.goodreads-li {
+  @include legacy-pie-clearfix;
+}
+.goodreads-li .content {
+  display: block;
+  padding-left: 40px;
+}
+.goodreads-li .book-cover {
+  float: left;
+  width: 35px;
+}
+.goodreads-li .author {
+  display: block;
+	font-size: 0.846em;
+}

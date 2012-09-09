@@ -31,6 +31,9 @@ you can add resource intensive styles.
 // styles in base.scss 
 @import "base";
 
+// Goodreads widget styling, TODO - only load when widget is present
+@import "goodreads-widget";
+
 /*
 LARGER MOBILE DEVICES
 This is for devices like the Galaxy Note or something that's 

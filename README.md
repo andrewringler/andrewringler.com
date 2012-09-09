@@ -48,6 +48,8 @@ This is a work in progress and you probably have no reason at all to be here if 
 
 ## TODO
 
+* Only load goodreads-widget.css when associated widget is present
+* Shorter timeout on goodreads rss feed reading, before resorting to cached version
 * Replace COMPASS watch script with a custom
     
     https://github.com/h5bp/node-build-script

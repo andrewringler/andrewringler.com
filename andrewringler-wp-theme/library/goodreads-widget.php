@@ -42,7 +42,7 @@ class Goodreads_Widget extends WP_Widget {
 	 */
 	function Goodreads_Widget() {
 		/* Widget settings. */
-		$widget_ops = array( 'classname' => 'example', 'description' => __('An example widget that displays a person\'s name and sex.', 'example') );
+		$widget_ops = array( 'classname' => 'goodreads-widget', 'description' => __('An example widget that displays a person\'s name and sex.', 'example') );
 
 		/* Widget control settings. */
 		$control_ops = array( 'id_base' => 'goodreads-widget' );
@@ -83,19 +83,21 @@ class Goodreads_Widget extends WP_Widget {
     if($items) { ?>
       <ul>
       <?php foreach ($items as $item) { 
-        $img_url_item = $item->get_item_tags($SIMPLEPIE_NAMESPACE_ATOM_10, 'book_small_image_url');
+        $img_url_item = $item->get_item_tags($SIMPLEPIE_NAMESPACE_ATOM_10, 'book_medium_image_url');
         $img_url = $img_url_item[0]['data']; 
         $link_item = $item->get_item_tags($SIMPLEPIE_NAMESPACE_ATOM_10, 'link');
         $link = $link_item[0]['data'];
         $author_item = $item->get_item_tags($SIMPLEPIE_NAMESPACE_ATOM_10, 'author_name');
         $author = $author_item[0]['data'];
         ?>
-        <li>
-          <img src="<?php 
+        <li class="goodreads-li">
+          <img class="book-cover" src="<?php 
             echo $img_url;
           ?>">
-          <a href="<?php echo $link; ?>"><?php echo $item->get_title(); ?></a>
-          by <?php echo $author; ?>
+          <span class="content">
+            <a class="title" href="<?php echo $link; ?>"><?php echo $item->get_title(); ?></a>
+            <span class="author">by <?php echo $author; ?></span>
+          </span>
         </li>
       <?php } ?>
     <?php } ?>
