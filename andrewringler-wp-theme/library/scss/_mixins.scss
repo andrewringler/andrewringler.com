@@ -56,6 +56,7 @@ $alert-green:       #e6efc2;
 $alert-blue:        #d5edf8;
 
 $black:             #000;
+$font-base:         #333;
 $white:             #fff;
 
 $bones-pink:        #f01d4f;
@@ -66,7 +67,7 @@ TYPOGRAPHY
 *********************/
 
 $sans-serif:        "Helvetica Neue", Helvetica, Arial, sans-serif; 
-$serif:             "Georgia", Cambria, Times New Roman, Times, serif; 
+$serif:             'Merriweather', "Georgia", Cambria, Times New Roman, Times, serif;
 
 
 /* 	To embed your own fonts, use this syntax
