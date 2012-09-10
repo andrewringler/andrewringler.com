@@ -167,5 +167,11 @@ function bones_wpsearch($form) {
     return $form;
 } // don't remove this bracket!
 
+function the_post_date_and_category() {
+  ?>
+  <p class="meta">
+    <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time('F jS, Y'); ?></time><? if (has_category()) echo '&mdash;'; ?><?php the_category(', '); ?>
+  </p>
+<?php }
 
 ?>
