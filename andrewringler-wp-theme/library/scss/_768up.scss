@@ -322,7 +322,9 @@ SIDEBARS & ASIDES
 	/* search widget */
 	#searchform {}
 	.widget_search {}
-	.screen-reader-text {}
+	.screen-reader-text {
+	  position: absolute; left: -999em;
+	}
 	
 	/* text widget */
 	.textwidget {}
