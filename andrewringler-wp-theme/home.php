@@ -65,7 +65,10 @@
 					        	</footer>
 					        </article>
 					
-					    <?php endif; ?>
+					    <?php endif; 
+					    wp_reset_postdata();
+  			      
+					    ?>
 			
 				    </div> <!-- end #main -->
     
