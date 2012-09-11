@@ -1,5 +1,21 @@
 <?php get_header(); ?>
 			
+			<div id="hero" class="wrap clearfix">
+			  <p>
+			    <b class="announce-header">
+			      <?php
+  			      $recent = new WP_Query('showposts=1');
+  			      if($recent->have_posts()) : while($recent->have_posts()) : $recent->the_post();
+                  echo human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ago, I wrote';  			      
+    			      endwhile;
+    			    endif;
+  			      wp_reset_postdata();
+  			    ?>
+			    </b>
+			    <a href=""><b class="announce-statement">Buying an Amp With Emotion</b></a>
+			  </p>
+			</div>
+			
 			<div id="content">
 			
 				<div id="inner-content" class="wrap clearfix">

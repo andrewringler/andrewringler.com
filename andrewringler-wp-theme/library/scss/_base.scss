@@ -162,20 +162,37 @@ HEADER SYTLES
 
 .header {}
 
-	#logo,
-	#logo a {
-	  color: $font-base;
-	  margin: 0; padding: 0;
-  	font-size: 1.5em;
+#logo,
+#logo a {
+  color: $font-base;
+  margin: 0; padding: 0;
+	font-size: 1.5em;
+	font-weight: bold;
+	line-height: 1.2;
+	text-transform: lowercase;
+}
+#logo-description {
+  line-height: 1;
+  margin: 0; padding: 0;
+  font-size: 1em;
+}
+
+#hero {
+  .announce-header {
+    display: block;
+  	font-size: 3.2em;
   	font-weight: bold;
-  	line-height: 1.2;
-  	text-transform: lowercase;
-	}
-	#logo-description {
-	  line-height: 1;
-	  margin: 0; padding: 0;
-	  font-size: 1em;
-	}
+    line-height: 1.4;
+  }
+  .announce-statement {
+    display: block;
+  	font-size: 3.2em;
+  	font-weight: bold;    
+    line-height: 1.4;
+  }
+}
+	
+
 
 /*********************
 NAVIGATION STYLES
