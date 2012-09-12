@@ -108,7 +108,13 @@ HEADER SYTLES
 
 .header {}
 
-	#logo {}
+	#logo {
+    float: left;
+  }
+  nav[role="navigation"] {
+    float: right;
+  }	
+  
 	
 /*********************
 NAVIGATION STYLES
@@ -203,7 +209,7 @@ NAVIGATION STYLES
 	}  /* end current highlighters */
 	
 } /* end .nav */
-	
+		
 /*********************
 SIDEBARS & ASIDES
 *********************/

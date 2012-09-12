@@ -40,10 +40,12 @@
 			
 				<div id="inner-header" class="wrap clearfix">
 					
-					<h1 id="logo" class="h1">
-					  <a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a>
-					</h1>
-					<h2 id="logo-description"><?php if (is_home()) bloginfo('description'); ?></h2>
+					<span id="logo">
+  					<h1 class="logo-title h1">
+  					  <a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a>
+  					</h1>
+  					<h2 class="logo-description"><?php if (is_home()) bloginfo('description'); ?></h2>
+					</span>
 					
 					<nav role="navigation">
 						<?php bones_main_nav(); // Adjust using Menus in Wordpress Admin ?>
