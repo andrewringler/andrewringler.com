@@ -221,7 +221,8 @@ and moe scalable.
 			display: block;
 			text-decoration: none;
 			margin: 0 20px 0 0;
-
+      color: $gray;
+      
 			/*
 			remember this is for mobile ONLY, so there's no need
 			to even declare hover styles here, you can do it in
@@ -273,8 +274,11 @@ and moe scalable.
 	li.current-menu-item,
 	li.current_page_item,
 	li.current-page-ancestor {
-
-		a {}
+    
+  
+		a {
+		  color: $bones-blue;
+		}
 
 	}  /* end current highlighters */
 
@@ -318,7 +322,7 @@ POSTS & CONTENT STYLES
 
 		/* post meta */
 		.meta {
-			color: #999;
+			color: $gray;
 
 			time {}
 		}
@@ -658,7 +662,7 @@ COMMENT STYLES
 			float: right;
 
 			a {
-				color: #999;
+				color: $gray;
 				text-decoration: none;
 
 				&:hover {
