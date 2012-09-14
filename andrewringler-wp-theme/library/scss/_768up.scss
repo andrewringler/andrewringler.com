@@ -106,14 +106,15 @@ LAYOUT & GRID STYLES
 HEADER SYTLES
 *********************/
 
-.header {}
-
-	#logo {
-    float: left;
-  }
+.header {
   nav[role="navigation"] {
     float: right;
-  }	
+  }	  
+}
+
+#logo {
+  float: left;
+}
   
 	
 /*********************
