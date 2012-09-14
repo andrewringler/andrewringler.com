@@ -11,3 +11,4 @@ Add widgets to sidebars:
     search
     recently wrote
     Goodreads widget
+Changed Recent Posts widget title to "Recently"
