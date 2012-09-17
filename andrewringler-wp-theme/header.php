@@ -41,10 +41,11 @@
 				<div id="inner-header" class="wrap clearfix">
 					
 					<span id="logo">
-  					<h1 class="logo-title h1">
-  					  <a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a>
-  					</h1>
-  					<h2 class="logo-description"><?php if (is_home()) bloginfo('description'); ?></h2>
+  					<a href="<?php echo home_url(); ?>" rel="nofollow">
+    					<h1 class="logo-title h1">
+    					  <?php bloginfo('name'); ?>
+    					</h1>
+    				</a>
 					</span>
 					
 					<nav role="navigation">
