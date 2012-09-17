@@ -6,7 +6,7 @@
     					<?php bones_footer_links(); // Adjust using Menus in Wordpress Admin ?>
 	                </nav>
 	                		
-					<p class="attribution">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>.</p>
+					<p class="attribution">COPYRIGHT &copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. ALL RIGHTS RESERVED.</p>
 				
 				</div> <!-- end #inner-footer -->
 				
