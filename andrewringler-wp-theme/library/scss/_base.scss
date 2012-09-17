@@ -880,7 +880,8 @@ FOOTER STYLES
 	clear: both;
   color: #fafafa;	
 	background: $foot-bkg url(../images/dark-textured-background.png);
-
+  border-top: 2px solid rgba(22,22,22,0.1);
+  
   .nav {
     li a {
       color: #fafafa;
