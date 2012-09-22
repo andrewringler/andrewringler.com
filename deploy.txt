@@ -1,3 +1,7 @@
+v0.2
+
+
+
 v0.1
 remove Films, Articles & Journal pages
 add main & footer menu with About, & cats: Article, Film, Journal

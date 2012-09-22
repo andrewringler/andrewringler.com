@@ -2,17 +2,17 @@
 			
 			<div id="hero" class="wrap clearfix">
 			  <p>
-			    <b class="announce-header">
 			      <?php
   			      $recent = new WP_Query('showposts=1');
   			      if($recent->have_posts()) : while($recent->have_posts()) : $recent->the_post();
+                  ?> <b class="announce-header"> <?php
                   echo human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ago, I wrote';  			      
-    			      endwhile;
+                  ?></b>
+                  <a href=""><b class="announce-statement"><?php the_title(); ?></b></a>
+    			      <?php endwhile;
     			    endif;
   			      wp_reset_postdata();
   			    ?>
-			    </b>
-			    <a href=""><b class="announce-statement">Buying an Amp With Emotion</b></a>
 			  </p>
 			</div>
 			
@@ -22,7 +22,7 @@
 			
 				    <div id="main" class="eightcol first clearfix" role="main">
 
-              <?php query_posts( 'posts_per_page=1' ); ?>
+              <?php query_posts( 'posts_per_page=2' ); ?>
 					    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
 					    <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
