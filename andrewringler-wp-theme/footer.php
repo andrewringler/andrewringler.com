@@ -1,16 +1,26 @@
 			<footer class="footer" role="contentinfo">
-			
 				<div id="inner-footer" class="wrap clearfix">
-					
-					<nav role="navigation">
-    					<?php bones_footer_links(); // Adjust using Menus in Wordpress Admin ?>
-	                </nav>
-	                		
-					<p class="attribution">COPYRIGHT &copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. ALL RIGHTS RESERVED.</p>
-				
+				  
+	        <div id="footer-widgets" class="footer-links sixcol first clearfix" role="complementary">
+  					<?php if ( is_active_sidebar( 'footer-widgets' ) ) : ?>
+  						<?php dynamic_sidebar( 'footer-widgets' ); ?>
+  					<?php else : ?>
+
+  						<!-- This content shows up if there are no widgets defined in the backend. -->
+
+  						<div class="alert help">
+  							<p>Please activate some Widgets on the 'Footer widgets sidebar'.</p>
+  						</div>
+
+  					<?php endif; ?>
+
+  				</div>
+  				
+  				<p class="attribution copyright clearfix wrap">COPYRIGHT &copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. ALL RIGHTS RESERVED.</p>
+    			
 				</div> <!-- end #inner-footer -->
-				
 			</footer> <!-- end footer -->
+
 		
 		</div> <!-- end #container -->
 		

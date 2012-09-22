@@ -219,14 +219,8 @@ and moe scalable.
 			margin: 0 20px 0 0;
       color: $gray;
       
-			/*
-			remember this is for mobile ONLY, so there's no need
-			to even declare hover styles here, you can do it in
-			the style.scss file where it's relevant. We want to
-			keep this file as small as possible!
-			*/
 			&:hover, &:focus {
-
+    		color: lighten($bones-blue, 9%);
 			}
 		}
 
@@ -886,6 +880,14 @@ FOOTER STYLES
 	background: $foot-bkg url(../images/dark-textured-background.png);
   border-top: 2px solid rgba(22,22,22,0.1);
   
+  a,a:visited {
+    color: $gray;
+    
+    &:hover, &:focus {
+  		color: white;
+  	}
+  }
+  
   .nav {
     li a {
       color: #fafafa;
@@ -915,7 +917,8 @@ FOOTER STYLES
 
 		ul {
 
-			li {}
+			li {
+			}
 
 		}
 
