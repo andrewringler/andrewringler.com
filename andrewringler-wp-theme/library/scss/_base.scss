@@ -173,6 +173,10 @@ HEADER SYTLES
 	line-height: 1;
 	text-transform: lowercase;
 }
+#logo .logo-title:hover,
+#logo .logo-title:focus {
+	color: lighten($bones-blue, 9%);
+}
 
 #hero {
   .announce-header {
