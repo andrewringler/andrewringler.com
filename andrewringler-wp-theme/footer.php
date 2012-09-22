@@ -16,7 +16,7 @@
 
   				</div>
   				
-  				<p class="attribution copyright clearfix wrap">COPYRIGHT &copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. ALL RIGHTS RESERVED.</p>
+  				<p class="attribution copyright clearfix wrap">Copyright <span class="copyright">&copy;</span> <?php echo date('Y'); ?> <?php bloginfo('name'); ?></p>
     			
 				</div> <!-- end #inner-footer -->
 			</footer> <!-- end footer -->
