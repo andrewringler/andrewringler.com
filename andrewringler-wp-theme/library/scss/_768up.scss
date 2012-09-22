@@ -344,6 +344,17 @@ SIDEBARS & ASIDES
 FOOTER STYLES
 *********************/
 
+/* change layout & column defaults
+  to margin-right instead of margin-left so we don't have to
+  concern ourselves with first
+*/
+.footer {
+  .onecol, .twocol, .threecol, .fourcol, .fivecol, .sixcol, .sevencol, .eightcol, .ninecol, .tencol, .elevencol, .twelvecol { 
+  	margin-left: 0;
+  	margin-right: 2.762430939%;
+  }
+}
+
 /*
 you'll probably need to do quite a bit
 of overriding here if you styled them for

@@ -880,10 +880,12 @@ FOOTER STYLES
 }
 
 .footer {
+  padding-bottom: 2em;
 	clear: both;
   color: #fafafa;	
-	background: $foot-bkg url(../images/dark-textured-background.png);
-  border-top: 2px solid rgba(22,22,22,0.1);
+  background-color: black;
+/*  background: $foot-bkg url(../images/dark-textured-background.png); */
+/* border-top: 2px solid rgba(22,22,22,0.1); */
   
   a,a:visited {
     color: $gray;
@@ -930,5 +932,12 @@ FOOTER STYLES
 	} /* end .footer-links */
 
 
-	.attribution {}
+	.attribution {
+	  ul,li {
+	    display: inline
+	  }
+	  li {
+	    margin-right: 1.5em; 
+	  }
+	}
 

@@ -16,7 +16,10 @@
 
   				</div>
   				
-  				<p class="attribution copyright clearfix wrap">Copyright <span class="copyright">&copy;</span> <?php echo date('Y'); ?> <?php bloginfo('name'); ?></p>
+				  <ul class="attribution clearfix wrap">
+				    <li><span class="copyright">Copyright <span class="copyright">&copy;</span> <?php echo date('Y'); ?> <?php bloginfo('name'); ?></span></li>
+  				  <li><a href="mailto:public@andrewringler.com">Contact me</a></li>
+  				</ul>
     			
 				</div> <!-- end #inner-footer -->
 			</footer> <!-- end footer -->
