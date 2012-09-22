@@ -13,5 +13,6 @@ Add widgets to sidebars:
     Goodreads widget
 Add widgets to footer:
   About Me
+  Links
   
 Changed Recent Posts widget title to "Recently"
