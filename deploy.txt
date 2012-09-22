@@ -14,5 +14,6 @@ Add widgets to sidebars:
 Add widgets to footer:
   About Me
   Links
+  tag cloud
   
 Changed Recent Posts widget title to "Recently"

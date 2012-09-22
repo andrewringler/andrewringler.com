@@ -3,6 +3,8 @@
 A wordpress theme for andrewringler.com and a custom Virtualbox / Vagrant / Librarian / Chef setup for WordPress development. 
 This is a work in progress and you probably have no reason at all to be here if you are not me :)
 
+Contact me at [public@andrewringler.com](mailto:public@andrewringler.com "public@andrewringler.com")
+
 ## Getting Started as a Developer
 
 * install https://www.virtualbox.org/
@@ -31,7 +33,7 @@ This is a work in progress and you probably have no reason at all to be here if 
     
     > compass watch
     
-## things I haven't automated yet, after vagrant up for the first time do:
+## Some things I haven't automated yet, after vagrant up for the first time do:
 
     to enable PHP debug:
     > vagrant ssh
@@ -62,3 +64,5 @@ This is a work in progress and you probably have no reason at all to be here if 
 * Deploy to production with Capistrano?
 https://github.com/augustash/capistrano-ash/wiki/WordPress-Shared-Hosting-Example
 http://wiki.dreamhost.com/Capistrano
+* Should look over h5bp .htaccess file, decide what features I want to pull into andrewringler.com
+* static.andrewringler.com for serving up image assets

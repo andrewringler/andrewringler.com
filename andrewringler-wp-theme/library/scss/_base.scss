@@ -874,6 +874,11 @@ SIDEBARS & ASIDES
 FOOTER STYLES
 *********************/
 
+#footer .widget {
+  padding-left: 0;
+  margin-left: 0;
+}
+
 .footer {
 	clear: both;
   color: #fafafa;	

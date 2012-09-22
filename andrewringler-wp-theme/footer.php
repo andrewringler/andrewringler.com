@@ -1,7 +1,7 @@
 			<footer class="footer" role="contentinfo">
-				<div id="inner-footer" class="wrap clearfix">
+				<div id="inner-footer">
 				  
-	        <div id="footer-widgets" class="footer-links sixcol first clearfix" role="complementary">
+	        <div id="footer-widgets" class="footer-links wrap clearfix" role="complementary">
   					<?php if ( is_active_sidebar( 'footer-widgets' ) ) : ?>
   						<?php dynamic_sidebar( 'footer-widgets' ); ?>
   					<?php else : ?>
