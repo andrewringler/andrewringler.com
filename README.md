@@ -50,8 +50,14 @@ Contact me at [public@andrewringler.com](mailto:public@andrewringler.com "public
 
 ## TODO
 
+* Deploy to production with Capistrano?
+https://github.com/augustash/capistrano-ash/wiki/WordPress-Shared-Hosting-Example
+http://wiki.dreamhost.com/Capistrano or maybe just rsync?
+* bagcheck style menu for mobile (hide footer menu on desktop)
+* post thumbnails
 * Only load goodreads-widget.css when associated widget is present
 * Shorter timeout on goodreads rss feed reading, before resorting to cached version
+what happens when goodreads is down? Does this kill my page?
 * Replace COMPASS watch script with a custom
     
     https://github.com/h5bp/node-build-script
@@ -61,8 +67,5 @@ Contact me at [public@andrewringler.com](mailto:public@andrewringler.com "public
     or http://forge.thethemefoundry.com/
     
 * Should probably switch to twentytwelve when it comes out with WP 3.5
-* Deploy to production with Capistrano?
-https://github.com/augustash/capistrano-ash/wiki/WordPress-Shared-Hosting-Example
-http://wiki.dreamhost.com/Capistrano
 * Should look over h5bp .htaccess file, decide what features I want to pull into andrewringler.com
 * static.andrewringler.com for serving up image assets
