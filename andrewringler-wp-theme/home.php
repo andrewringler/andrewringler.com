@@ -8,7 +8,7 @@
                   ?> <b class="announce-header"> <?php
                   echo human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ago, I wrote';  			      
                   ?></b>
-                  <a href=""><b class="announce-statement"><?php the_title(); ?></b></a>
+                  <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><b class="announce-statement"><?php the_title(); ?></b></a>
     			      <?php endwhile;
     			    endif;
   			      wp_reset_postdata();
