@@ -27,6 +27,7 @@ Contact me at [public@andrewringler.com](mailto:public@andrewringler.com "public
 * export wordpress content from andrewringler.com
 * import into wordpress at http://192.168.33.20/
 * activate 'Andrew Ringler 2012' theme
+* setup menus and widgets
 * generate CSS
     
     > cd andrewringler-wp-theme/library/scss 
