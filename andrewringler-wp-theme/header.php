@@ -20,8 +20,11 @@
 		
 		<!-- icons & favicons (for more: http://themble.com/support/adding-icons-favicons/) -->
 		<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
-  	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-		<link href='http://fonts.googleapis.com/css?family=Merriweather:700,400' rel='stylesheet' type='text/css'>
+		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+		
+		<?php if ( !is_page( 'Projects' ) ) { ?>
+				<link href='http://fonts.googleapis.com/css?family=Merriweather:700,400' rel='stylesheet' type='text/css'>
+		<?php } ?>
 		
 		<!-- wordpress head functions -->
 		<?php wp_head(); ?>
