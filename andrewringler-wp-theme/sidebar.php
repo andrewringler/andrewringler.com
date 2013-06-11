@@ -8,9 +8,6 @@
 
 						<!-- This content shows up if there are no widgets defined in the backend. -->
 						
-						<div class="alert help">
-							<p>Please activate some Widgets on the 'Main Sidebar'.</p>
-						</div>
 
 					<?php endif; ?>
 

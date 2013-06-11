@@ -1,3 +1,4 @@
+
 			<footer class="footer" role="contentinfo">
 				<div id="inner-footer">
 				  
@@ -23,7 +24,6 @@
     			
 				</div> <!-- end #inner-footer -->
 			</footer> <!-- end footer -->
-
 		
 		</div> <!-- end #container -->
 		

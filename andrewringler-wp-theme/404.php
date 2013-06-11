@@ -10,7 +10,7 @@
 						
 							<header class="article-header">
 							
-								<h1><?php _e("Epic 404 - Article Not Found", "bonestheme"); ?></h1>
+								<h1><?php _e("Oh, sorry I can't find this page (404)", "bonestheme"); ?></h1>
 						
 							</header> <!-- end article header -->
 					
@@ -27,8 +27,6 @@
 							</section> <!-- end search section -->
 						
 							<footer class="article-header">
-							
-							    <p><?php _e("This is the 404.php template.", "bonestheme"); ?></p>
 							
 							</footer> <!-- end article footer -->
 					

@@ -39,6 +39,7 @@
 	
 		<div id="container">
 			
+			<?php if(!is_page('Random')) { ?>
 			<header class="header" role="banner">
 			
 				<div id="inner-header" class="wrap clearfix">
@@ -58,3 +59,4 @@
 				</div> <!-- end #inner-header -->
 			
 			</header> <!-- end header -->
+			<?php } ?>

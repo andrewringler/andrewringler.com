@@ -6,9 +6,6 @@
 
 						<!-- This content shows up if there are no widgets defined in the backend. -->
 						
-						<div class="alert help">
-							<p>Please activate some Widgets for the 'Homepage Sidebar' sidebar.</p>
-						</div>
 
 					<?php endif; ?>
 

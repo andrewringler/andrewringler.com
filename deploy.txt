@@ -1,4 +1,13 @@
 v0.2
+- change article category to write
+  and url to http://andrewringler.com/write/
+- create new category called create
+  with url http://andrewringler.com/create/
+  which includes Films I have created and Projects
+- new main menu: About, Write, Create
+- new tags page called topics, http://andrewringler.com/topics/
+- add http://wordpress.org/plugins/video-thumbnails/ plugin
+  & update all video posts to have a video thumbnail
 
 
 

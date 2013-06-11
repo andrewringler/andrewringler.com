@@ -51,7 +51,9 @@
 					
 						    <section class="post-content clearfix">
 						
-							    <?php the_post_thumbnail( 'bones-thumb-300' ); ?>
+							    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+									<?php the_post_thumbnail( 'bones-thumb-300' ); ?>
+								</a>
 						
 							    <?php the_excerpt(); ?>
 					

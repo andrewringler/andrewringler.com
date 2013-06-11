@@ -3,7 +3,7 @@
 			<div id="hero" class="wrap clearfix">
 			  <p>
 			      <?php
-  			      $recent = new WP_Query( array( 'showposts' => 1, 'category_name' => 'article') );
+  			      $recent = new WP_Query( array( 'showposts' => 1, 'category_name' => 'writing') );
   			      if($recent->have_posts()) : while($recent->have_posts()) : $recent->the_post();
                   ?> <b class="announce-header"> <?php
                   echo human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ago, I wrote';  			      
@@ -22,7 +22,7 @@
 			
 				    <div id="main" class="eightcol first clearfix" role="main">
 
-              <?php query_posts( array( 'posts_per_page' => 1, 'category_name' => 'article') ); ?>
+             		   <?php query_posts( array( 'posts_per_page' => 1, 'category_name' => 'writing') ); ?>
 					    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
 					    <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">

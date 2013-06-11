@@ -88,8 +88,8 @@ function bones_register_sidebars() {
     ));
     register_sidebar(array(
     	'id' => 'home',
-    	'name' => 'Homepage Sidebar',
-    	'description' => 'The sidebar for the Homepage.',
+    	'name' => 'About Page Widgets',
+    	'description' => 'Widgets that will display on the About Page.',
     	'before_widget' => '<div id="%1$s" class="widget %2$s">',
     	'after_widget' => '</div>',
     	'before_title' => '<h4 class="widgettitle">',
