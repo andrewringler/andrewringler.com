@@ -512,11 +512,6 @@ footer {
 
 /* =Home Page
 ----------------------------------------------- */
-.title {
-  font-weight: 600;
-  color: #444;
-}
-
 body.home #profile-header {
   position: relative;
   padding-left: 520px;
@@ -635,6 +630,10 @@ object {
 
 /* =Widgets
 ----------------------------------------------- */
+.title, .author, .entry-date {
+  font-weight: 600;
+  color: #444;
+}
 
 .widget {
 	margin: 0 0 1.5em;
