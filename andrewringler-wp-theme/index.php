@@ -1,74 +1,46 @@
-<?php get_header(); ?>
-			
-			<div id="content">
-			
-				<div id="inner-content" class="wrap clearfix">
-			
-				    <div id="main" class="eightcol first clearfix" role="main">
+<?php
+/**
+ * The main template file.
+ *
+ * This is the most generic template file in a WordPress theme
+ * and one of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ * E.g., it puts together the home page when no home.php file exists.
+ * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package Andrew Profile Theme 2013
+ */
 
-					    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-					
-					    <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
-						
-						    <header class="article-header">
-							
-							    <h1 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
-							
-						      <?php the_post_date_and_category() ?>
-							    
-						    </header> <!-- end article header -->
-					
-						    <section class="post-content clearfix">
-							    <?php the_content(); ?>
-						    </section> <!-- end article section -->
-						
-						    <footer class="article-footer">
+get_header(); ?>
 
-    							<p class="tags"><?php the_tags('<span class="tags-title">Topics:</span> ', ', ', ''); ?></p>
+	<div id="primary" class="content-area">
+		<div id="content" class="site-content" role="main">
 
-						    </footer> <!-- end article footer -->
-						    
-						    <?php // comments_template(); // uncomment if you want to use them ?>
-					
-					    </article> <!-- end article -->
-					
-					    <?php endwhile; ?>	
-					
-					        <?php if (function_exists('bones_page_navi')) { // if experimental feature is active ?>
-						
-						        <?php bones_page_navi(); // use the page navi function ?>
-						
-					        <?php } else { // if it is disabled, display regular wp prev & next links ?>
-						        <nav class="wp-prev-next">
-							        <ul class="clearfix">
-								        <li class="prev-link"><?php next_posts_link(_e('&laquo; Older Entries', 'bonestheme')) ?></li>
-								        <li class="next-link"><?php previous_posts_link(_e('Newer Entries &raquo;', 'bonestheme')) ?></li>
-							        </ul>
-						        </nav>
-					        <?php } ?>		
-					
-					    <?php else : ?>
-					    
-					        <article id="post-not-found" class="hentry clearfix">
-					            <header class="article-header">
-					        	    <h1><?php _e("Oops, Post Not Found!", "bonestheme"); ?></h1>
-					        	</header>
-					            <section class="post-content">
-					        	    <p><?php _e("Uh Oh. Something is missing. Try double checking things.", "bonestheme"); ?></p>
-					        	</section>
-					        	<footer class="article-footer">
-					        	    <p><?php _e("This is the error message in the index.php template.", "bonestheme"); ?></p>
-					        	</footer>
-					        </article>
-					
-					    <?php endif; ?>
-			
-				    </div> <!-- end #main -->
-    
-				    <?php get_sidebar(); // sidebar 1 ?>
-				    
-				</div> <!-- end #inner-content -->
-    
-			</div> <!-- end #content -->
+		<?php if ( have_posts() ) : ?>
 
+			<?php /* Start the Loop */ ?>
+			<?php while ( have_posts() ) : the_post(); ?>
+
+				<?php
+					/* Include the Post-Format-specific template for the content.
+					 * If you want to overload this in a child theme then include a file
+					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+					 */
+					get_template_part( 'content', get_post_format() );
+				?>
+
+			<?php endwhile; ?>
+
+			<?php andrewringler_profile_2013_content_nav( 'nav-below' ); ?>
+
+		<?php else : ?>
+
+			<?php get_template_part( 'no-results', 'index' ); ?>
+
+		<?php endif; ?>
+
+		</div><!-- #content -->
+	</div><!-- #primary -->
+
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

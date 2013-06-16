@@ -1,186 +1,149 @@
 <?php
-/*
-Author: Eddie Machado
-URL: htp://themble.com/bones/
+/**
+ * Andrew Profile Theme 2013 functions and definitions
+ *
+ * @package Andrew Profile Theme 2013
+ */
 
-This is where you can drop your custom functions or
-just edit things like thumbnail sizes, header images, 
-sidebars, comments, ect.
-*/
+/**
+ * Set the content width based on the theme's design and stylesheet.
+ */
+if ( ! isset( $content_width ) )
+	$content_width = 640; /* pixels */
 
-/************* INCLUDE NEEDED FILES ***************/
+if ( ! function_exists( 'andrewringler_profile_2013_setup' ) ) :
+/**
+ * Sets up theme defaults and registers support for various WordPress features.
+ *
+ * Note that this function is hooked into the after_setup_theme hook, which runs
+ * before the init hook. The init hook is too late for some features, such as indicating
+ * support post thumbnails.
+ */
+function andrewringler_profile_2013_setup() {
 
-/*
-1. library/bones.php
-    - head cleanup (remove rsd, uri links, junk css, ect)
-	- enqueueing scripts & styles
-	- theme support functions
-    - custom menu output & fallbacks
-	- related post function
-	- page-navi function
-	- removing <p> from around images
-	- customizing the post excerpt
-	- custom google+ integration
-	- adding custom fields to user profiles
-*/
-require_once('library/bones.php'); // if you remove this, bones will break
-/*
-2. library/custom-post-type.php
-    - an example custom post type
-    - example custom taxonomy (like categories)
-    - example custom taxonomy (like tags)
-*/
-require_once('library/custom-post-type.php'); // you can disable this if you like
-/*
-3. library/admin.php
-    - removing some default WordPress dashboard widgets
-    - an example custom dashboard widget
-    - adding custom login css
-    - changing text in footer of admin
-*/
-// require_once('library/admin.php'); // this comes turned off by default
-/*
-4. library/translation/translation.php
-    - adding support for other languages
-*/
-// require_once('library/translation/translation.php'); // this comes turned off by default
+	/**
+	 * Make theme available for translation
+	 * Translations can be filed in the /languages/ directory
+	 * If you're building a theme based on Andrew Profile Theme 2013, use a find and replace
+	 * to change 'andrewringler_profile_2013' to the name of your theme in all the template files
+	 */
+	load_theme_textdomain( 'andrewringler_profile_2013', get_template_directory() . '/languages' );
 
-require_once('library/goodreads-widget.php');
+	/**
+	 * Add default posts and comments RSS feed links to head
+	 */
+	add_theme_support( 'automatic-feed-links' );
 
+	/**
+	 * Enable support for Post Thumbnails on posts and pages
+	 *
+	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
+	 */
+	//add_theme_support( 'post-thumbnails' );
 
-/************* THUMBNAIL SIZE OPTIONS *************/
+	/**
+	 * This theme uses wp_nav_menu() in one location.
+	 */
+	register_nav_menus( array(
+		'primary' => __( 'Primary Menu', 'andrewringler_profile_2013' ),
+	) );
 
-// Thumbnail sizes
-add_image_size( 'bones-thumb-600', 600, 150, true );
-add_image_size( 'bones-thumb-300', 300, 100, true );
-/* 
-to add more sizes, simply copy a line from above 
-and change the dimensions & name. As long as you
-upload a "featured image" as large as the biggest
-set width or height, all the other sizes will be
-auto-cropped.
+	/**
+	 * Enable support for Post Formats
+	 */
+	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
+}
+endif; // andrewringler_profile_2013_setup
+add_action( 'after_setup_theme', 'andrewringler_profile_2013_setup' );
 
-To call a different size, simply change the text
-inside the thumbnail function.
+/**
+ * Setup the WordPress core custom background feature.
+ *
+ * Use add_theme_support to register support for WordPress 3.4+
+ * as well as provide backward compatibility for WordPress 3.3
+ * using feature detection of wp_get_theme() which was introduced
+ * in WordPress 3.4.
+ *
+ * @todo Remove the 3.3 support when WordPress 3.6 is released.
+ *
+ * Hooks into the after_setup_theme action.
+ */
+function andrewringler_profile_2013_register_custom_background() {
+	$args = array(
+		'default-color' => 'ffffff',
+		'default-image' => '',
+	);
 
-For example, to call the 300 x 300 sized image, 
-we would use the function:
-<?php the_post_thumbnail( 'bones-thumb-300' ); ?>
-for the 600 x 100 image:
-<?php the_post_thumbnail( 'bones-thumb-600' ); ?>
+	$args = apply_filters( 'andrewringler_profile_2013_custom_background_args', $args );
 
-You can change the names and dimensions to whatever
-you like. Enjoy!
-*/
+	if ( function_exists( 'wp_get_theme' ) ) {
+		add_theme_support( 'custom-background', $args );
+	} else {
+		define( 'BACKGROUND_COLOR', $args['default-color'] );
+		if ( ! empty( $args['default-image'] ) )
+			define( 'BACKGROUND_IMAGE', $args['default-image'] );
+		add_custom_background();
+	}
+}
+add_action( 'after_setup_theme', 'andrewringler_profile_2013_register_custom_background' );
 
-/************* ACTIVE SIDEBARS ********************/
+/**
+ * Register widgetized area and update sidebar with default widgets
+ */
+function andrewringler_profile_2013_widgets_init() {
+	register_sidebar( array(
+		'name'          => __( 'Sidebar', 'andrewringler_profile_2013' ),
+		'id'            => 'sidebar-1',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	) );
+}
+add_action( 'widgets_init', 'andrewringler_profile_2013_widgets_init' );
 
-// Sidebars & Widgetizes Areas
-function bones_register_sidebars() {
-    register_sidebar(array(
-    	'id' => 'mainsidebar',
-    	'name' => 'Main Sidebar',
-    	'description' => 'The first (primary) sidebar.',
-    	'before_widget' => '<div id="%1$s" class="widget %2$s">',
-    	'after_widget' => '</div>',
-    	'before_title' => '<h4 class="widgettitle">',
-    	'after_title' => '</h4>',
-    ));
-    register_sidebar(array(
-    	'id' => 'home',
-    	'name' => 'About Page Widgets',
-    	'description' => 'Widgets that will display on the About Page.',
-    	'before_widget' => '<div id="%1$s" class="widget %2$s">',
-    	'after_widget' => '</div>',
-    	'before_title' => '<h4 class="widgettitle">',
-    	'after_title' => '</h4>',
-    ));
-    register_sidebar(array(
-    	'id' => 'footer-widgets',
-    	'name' => 'Footer Widgets',
-    	'description' => 'Footer widgets sidebar.',
-    	'before_widget' => '<div id="%1$s" class="fourcol %2$s">',
-    	'after_widget' => '</div>',
-    	'before_title' => '<h4 class="widgettitle">',
-    	'after_title' => '</h4>',
-    ));
-    
-    /* 
-    to add more sidebars or widgetized areas, just copy
-    and edit the above sidebar code. In order to call 
-    your new sidebar just use the following code:
-    
-    Just change the name to whatever your new
-    sidebar's id is, for example:
-    
-    register_sidebar(array(
-    	'id' => 'sidebar2',
-    	'name' => 'Sidebar 2',
-    	'description' => 'The second (secondary) sidebar.',
-    	'before_widget' => '<div id="%1$s" class="widget %2$s">',
-    	'after_widget' => '</div>',
-    	'before_title' => '<h4 class="widgettitle">',
-    	'after_title' => '</h4>',
-    ));
-    
-    To call the sidebar in your template, you can just copy
-    the sidebar.php file and rename it to your sidebar's name.
-    So using the above example, it would be:
-    sidebar-sidebar2.php
-    
-    */
-} // don't remove this bracket!
+/**
+ * Enqueue scripts and styles
+ */
+function andrewringler_profile_2013_scripts() {
+	wp_enqueue_style( 'andrewringler_profile_2013-style', get_stylesheet_uri() );
 
-/************* COMMENT LAYOUT *********************/
-		
-// Comment Layout
-function bones_comments($comment, $args, $depth) {
-   $GLOBALS['comment'] = $comment; ?>
-	<li <?php comment_class(); ?>>
-		<article id="comment-<?php comment_ID(); ?>" class="clearfix">
-			<header class="comment-author vcard">
-			    <?php /*
-			        this is the new responsive optimized comment image. It used the new HTML5 data-attribute to display comment gravatars on larger screens only. What this means is that on larger posts, mobile sites don't have a ton of requests for comment images. This makes load time incredibly fast! If you'd like to change it back, just replace it with the regular wordpress gravatar call:
-			        echo get_avatar($comment,$size='32',$default='<path_to_url>' );
-			    */ ?>
-			    <!-- custom gravatar call -->
-			    <img data-gravatar="http://www.gravatar.com/avatar/<?php echo md5($bgauthemail); ?>&s=32" class="load-gravatar avatar avatar-48 photo" height="32" width="32" src="<?php echo get_template_directory_uri(); ?>/library/images/nothing.gif" />
-			    <!-- end custom gravatar call -->
-				<?php printf(__('<cite class="fn">%s</cite>'), get_comment_author_link()) ?>
-				<time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time('F jS, Y'); ?> </a></time>
-				<?php edit_comment_link(__('(Edit)', 'bonestheme'),'  ','') ?>
-			</header>
-			<?php if ($comment->comment_approved == '0') : ?>
-       			<div class="alert info">
-          			<p><?php _e('Your comment is awaiting moderation.', 'bonestheme') ?></p>
-          		</div>
-			<?php endif; ?>
-			<section class="comment_content clearfix">
-				<?php comment_text() ?>
-			</section>
-			<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-		</article>
-    <!-- </li> is added by WordPress automatically -->
-<?php
-} // don't remove this bracket!
+	wp_enqueue_script( 'andrewringler_profile_2013-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
-/************* SEARCH FORM LAYOUT *****************/
+	wp_enqueue_script( 'andrewringler_profile_2013-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
-// Search Form
-function bones_wpsearch($form) {
-    $form = '<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
-    <label class="screen-reader-text" for="s">' . __('Search', 'bonestheme') . '</label>
-    <input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="'.esc_attr__('Search andrewringler.com','bonestheme').'" />
-    <input type="submit" id="searchsubmit" value="'. esc_attr__('Search') .'" />
-    </form>';
-    return $form;
-} // don't remove this bracket!
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
 
-function the_post_date_and_category() {
-  ?>
-  <p class="meta">
-    <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time('F jS, Y'); ?></time><? if (has_category()) echo '&mdash;'; ?><?php the_category(', '); ?>
-  </p>
-<?php }
+	if ( is_singular() && wp_attachment_is_image() ) {
+		wp_enqueue_script( 'andrewringler_profile_2013-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'andrewringler_profile_2013_scripts' );
 
-?>
+/**
+ * Implement the Custom Header feature.
+ */
+//require get_template_directory() . '/inc/custom-header.php';
+
+/**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/template-tags.php';
+
+/**
+ * Custom functions that act independently of the theme templates.
+ */
+require get_template_directory() . '/inc/extras.php';
+
+/**
+ * Customizer additions.
+ */
+require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Load Jetpack compatibility file.
+ */
+require get_template_directory() . '/inc/jetpack.php';
+

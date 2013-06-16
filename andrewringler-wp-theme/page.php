@@ -1,57 +1,34 @@
-<?php get_header(); ?>
-			
-			<div id="content">
-			
-				<div id="inner-content" class="wrap clearfix">
-			
-				    <div id="main" class="eightcol first clearfix" role="main">
+<?php
+/**
+ * The template for displaying all pages.
+ *
+ * This is the template that displays all pages by default.
+ * Please note that this is the WordPress construct of pages
+ * and that other 'pages' on your WordPress site will use a
+ * different template.
+ *
+ * @package Andrew Profile Theme 2013
+ */
 
-					    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-					
-					    <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
-						
-						    <header class="article-header">
-							
-							    <h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
-													
-						    </header> <!-- end article header -->
-					
-						    <section class="post-content clearfix" itemprop="articleBody">
-							    <?php the_content(); ?>
-							</section> <!-- end article section -->
-						
-						    <footer class="article-footer">
-			
-							    <?php the_tags('<p class="tags"><span class="tags-title">Topics:</span> ', ', ', '</p>'); ?>
-							
-						    </footer> <!-- end article footer -->
-						    
-					    </article> <!-- end article -->
-					
-					    <?php endwhile; ?>		
-					
-					    <?php else : ?>
-					
-    					    <article id="post-not-found" class="hentry clearfix">
-    					    	<header class="article-header">
-    					    		<h1><?php _e("Oops, Post Not Found!", "bonestheme"); ?></h1>
-    					    	</header>
-    					    	<section class="post-content">
-    					    		<p><?php _e("Uh Oh. Something is missing. Try double checking things.", "bonestheme"); ?></p>
-    					    	</section>
-    					    	<footer class="article-footer">
-    					    	    <p><?php _e("This is the error message in the page.php template.", "bonestheme"); ?></p>
-    					    	</footer>
-    					    </article>
-					
-					    <?php endif; ?>
-			
-    				</div> <!-- end #main -->
-    
-				    <?php get_sidebar(); // sidebar 1 ?>
-				    
-				</div> <!-- end #inner-content -->
-    
-			</div> <!-- end #content -->
+get_header(); ?>
 
+	<div id="primary" class="content-area">
+		<div id="content" class="site-content" role="main">
+
+			<?php while ( have_posts() ) : the_post(); ?>
+
+				<?php get_template_part( 'content', 'page' ); ?>
+
+				<?php
+					// If comments are open or we have at least one comment, load up the comment template
+					if ( comments_open() || '0' != get_comments_number() )
+						comments_template();
+				?>
+
+			<?php endwhile; // end of the loop. ?>
+
+		</div><!-- #content -->
+	</div><!-- #primary -->
+
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

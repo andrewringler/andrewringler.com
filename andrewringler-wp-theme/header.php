@@ -1,62 +1,58 @@
-<!doctype html>  
+<?php
+/**
+ * The Header for our theme.
+ *
+ * Displays all of the <head> section and everything up till <div id="main">
+ *
+ * @package Andrew Profile Theme 2013
+ */
+?><!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+<head>
+<meta charset="<?php bloginfo( 'charset' ); ?>" />
+<meta name="viewport" content="width=device-width" />
+<title><?php wp_title( '|', true, 'right' ); ?></title>
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
-<!--[if lt IE 7]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if (IE 7)&!(IEMobile)]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8"><![endif]-->
-<!--[if (IE 8)&!(IEMobile)]><html <?php language_attributes(); ?> class="no-js lt-ie9"><![endif]-->
-<!--[if gt IE 8]><!--> <html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
-	
-	<head>
-		<meta charset="utf-8">
-		
-		<title><?php wp_title(''); ?></title>
-		
-		<!-- Google Chrome Frame for IE -->
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		
-		<!-- mobile meta (hooray!) -->
-		<meta name="HandheldFriendly" content="True">
-		<meta name="MobileOptimized" content="320">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		
-		<!-- icons & favicons (for more: http://themble.com/support/adding-icons-favicons/) -->
-		<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
-		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-		
-		<?php if ( !is_page( 'Projects' ) ) { ?>
-				<link href='http://fonts.googleapis.com/css?family=Merriweather:700,400' rel='stylesheet' type='text/css'>
-		<?php } ?>
-		
-		<!-- wordpress head functions -->
-		<?php wp_head(); ?>
-		<!-- end of wordpress head -->
-			
-		<!-- drop Google Analytics Here -->
-		<!-- end analytics -->
-		
-	</head>
-	
-	<body <?php body_class(); ?>>
-	
-		<div id="container">
-			
-			<?php if(!is_page('Random')) { ?>
-			<header class="header" role="banner">
-			
-				<div id="inner-header" class="wrap clearfix">
-					
-					<span id="logo">
-  					<a href="<?php echo home_url(); ?>" rel="nofollow">
-    					<h1 class="logo-title h1">
-    					  <?php bloginfo('name'); ?>
-    					</h1>
-    				</a>
-					</span>
-					
-					<nav role="navigation">
-						<?php bones_main_nav(); // Adjust using Menus in Wordpress Admin ?>
-					</nav>
-				
-				</div> <!-- end #inner-header -->
-			
-			</header> <!-- end header -->
-			<?php } ?>
+<script type="text/javascript">
+  WebFontConfig = {
+    google: {
+      families: ['Open+Sans:800,300,600:latin']
+    }
+  };
+
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+        '://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+</script>
+
+<?php wp_head(); ?>
+</head>
+
+<body <?php body_class(); ?>>
+<div id="page" class="hfeed site">
+	<?php do_action( 'before' ); ?>
+	<header id="masthead" class="site-header" role="banner">
+    <!-- <div class="site-branding">
+      <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+      <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+    </div> -->
+
+	  <!-- <nav id="site-navigation" class="navigation-main" role="navigation">
+	     <h1 class="menu-toggle"><?php _e( 'Menu', 'andrewringler_profile_2013' ); ?></h1>
+	     <div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'andrewringler_profile_2013' ); ?>"><?php _e( 'Skip to content', 'andrewringler_profile_2013' ); ?></a></div>
+
+	     <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+	   </nav>
+	  -->	<!-- #site-navigation -->
+	</header>
+	<!-- #masthead -->
+
+	<div id="main" class="site-main">

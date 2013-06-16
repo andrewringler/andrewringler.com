@@ -1,3 +1,7 @@
+v0.3
+- update tagline to 'Programmer, User Experience Designer, Filmmaker'
+- rename code posts to friendly names
+
 v0.2
 - change article category to write
   and url to http://andrewringler.com/write/
