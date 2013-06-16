@@ -119,10 +119,12 @@ body {
     color: #333;
 	
 	padding-left: 1em;
-    margin: 4em auto 1em auto;
+    margin: 0.5em auto 1em auto;
     max-width: 850px;
 }
-
+body.home {
+    margin: 4em auto 1em auto;	
+}
 
 
 
