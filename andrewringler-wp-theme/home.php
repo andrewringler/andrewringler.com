@@ -15,9 +15,9 @@ get_header(); ?>
           Cambridge MA. I get to work on incredible projects modeling people's behavior. I am passionate
           about usability, design and accessibility.
         </p>
-        <p>Lately, I have been focusing on web technologies like CSS, Javascript, <a href="http://nodejs.org/">Node.js</a>, 
-          <a href="http://www.playframework.com/">Play Framework</a> (with <a href="http://www.scala-lang.org/">Scala</a>).
-          I build all sorts of things: prototypes, demonstrations and productions apps.
+        <p>Lately, I have been focusing on web technologies like CSS, Javascript, <a href="http://nodejs.org/">Node.js</a> 
+          and the <a href="http://www.playframework.com/">Play Framework</a> (with <a href="http://www.scala-lang.org/">Scala</a>).
+          I build software for all stages of development including prototypes, demonstrations and production applications.
         </p>
 
 
@@ -30,8 +30,7 @@ get_header(); ?>
         <?php query_posts( array( 'posts_per_page' => 15, 'category_name' => 'code') ); ?>
  				  <?php if (have_posts()) : ?>
           <h3>Code</h3>
-          <p>I write a bit of code in my spare time. I love to learn new  
-            technologies, building something is the best way to learn. I have written a post about
+          <p>I love to learn new technologies so I end up building small apps in my spare time. I have written a post about
             most of my programming projects, the rest you'll find on github at <a href="https://github.com/andrewringler/">github.com/andrewringler</a>
           </p>
 
