@@ -517,7 +517,7 @@ footer {
   color: #444;
 }
 
-#profile-header {
+body.home #profile-header {
   position: relative;
   padding-left: 520px;
   min-height: 250px;

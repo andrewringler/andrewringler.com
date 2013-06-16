@@ -8,14 +8,6 @@
 get_header(); ?>
 
 <div id="primary" class="content-area">
-    <div id="profile-header">
-      <img src="<?php bloginfo('template_directory'); ?>/images/andrew_ringler_carson_beach3.jpg" id="profile-header-image">
-      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-        <h1><?php bloginfo( 'name' ); ?></h1>
-      </a>
-			<p><?php bloginfo( 'description' ); ?></p>
-    </div>
-		
 	<div id="content" class="site-content" role="main">
         <h3>Who</h3>
         <p>You have found the website of Andrew Ringler. I live in Medford Massachusetts.

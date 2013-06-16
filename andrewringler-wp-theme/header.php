@@ -46,7 +46,28 @@
 
        <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
      </nav><!-- #site-navigation -->
+	 
+     <div id="profile-header">
+		 <?php if( is_home() ) { ?>
+	         <img src="<?php bloginfo('template_directory'); ?>/images/andrew_ringler_carson_beach.jpg" id="profile-header-image">
+			 <h1><?php bloginfo( 'name' ); ?></h1>
+		<?php } else { ?> 
+	        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+	          <h1><?php bloginfo( 'name' ); ?></h1>
+	        </a>
+		<?php } ?> 
+		 
+		<p><?php bloginfo( 'description' ); ?></p>
+     </div>
+	 
+	 
 	</header>
 	<!-- #masthead -->
+
+
+
+
+
+
 
 	<div id="main" class="site-main">
