@@ -482,7 +482,6 @@ a:active {
 #content {
   max-width: 500px;
 }
-
 .sticky {
 }
 .hentry {
@@ -670,4 +669,38 @@ object {
 ----------------------------------------------- */
 .visually-hidden {
 	display: none;
+}
+
+/* =Responsive Breakpoints
+ * not mobile-first
+----------------------------------------------- */
+@media only screen and (max-device-width: 900px) {
+	#content {
+	  max-width: 95%;
+	}	
+	body.home {
+	    margin-top: 0.5em;
+	}
+	
+	body.home #profile-header {
+	  	min-height: inherit;
+		padding-left: 0;
+		margin: 0;
+	}
+	body.home #profile-header .description {
+		display: block;
+		max-width: 95%;
+	}
+	
+	#profile-header-image {
+	  max-width: 75%;
+	  position: inherit;
+	}	
+	#profile-header h1 {
+		font-size: 1em;
+	}
+	#profile-header p {
+		font-size: 1em;
+		max-width: 100%;
+	}
 }

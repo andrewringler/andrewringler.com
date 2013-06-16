@@ -11,6 +11,7 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <title><?php wp_title( '|', true, 'right' ); ?></title>
+<meta name="viewport" content="width=device-width">
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
@@ -49,14 +50,16 @@
      <div id="profile-header">
 		 <?php if( is_home() ) { ?>
 	         <img src="<?php bloginfo('template_directory'); ?>/images/andrew_ringler_carson_beach.jpg" id="profile-header-image">
-			 <h1><?php bloginfo( 'name' ); ?></h1>
+			 <div class="description">
+				 <h1><?php bloginfo( 'name' ); ?></h1>
 		<?php } else { ?> 
-	        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-	          <h1><?php bloginfo( 'name' ); ?></h1>
-	        </a>
+		        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+		          <h1><?php bloginfo( 'name' ); ?></h1>
+		        </a>
 		<?php } ?> 
 		 
-		<p><?php bloginfo( 'description' ); ?></p>
+				<p><?php bloginfo( 'description' ); ?></p>
+			</div>
      </div>
 	 
 	 
