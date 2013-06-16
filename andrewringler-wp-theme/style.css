@@ -329,7 +329,8 @@ a, a:visited {
 a:hover,
 a:focus,
 a:active {
-	color: black;
+	text-shadow: 0 0 0.2em rgba(100,100,255,0.3); 	
+	text-decoration: underline;
 }
 
 /* Alignment */
