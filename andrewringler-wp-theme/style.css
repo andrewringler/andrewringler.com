@@ -329,7 +329,7 @@ a, a:visited {
 a:hover,
 a:focus,
 a:active {
-	text-shadow: 0 0 0.2em rgba(100,100,255,0.3); 	
+	text-shadow: 0 0 0.2em rgba(150,150,255,0.2), 0 0 0.2em rgba(150,150,255,0.2), 0 0 0.2em rgba(150,150,255,0.2); 	
 	text-decoration: underline;
 }
 
