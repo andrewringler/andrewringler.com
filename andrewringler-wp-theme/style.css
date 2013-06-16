@@ -146,6 +146,10 @@ h3 {
   	margin-top: 1.5em;
   	margin-bottom: 0.25em;
 }
+h4 {
+	font-weight: 600;
+	color: #444;	
+}
 
 hr {
 	background-color: #ccc;

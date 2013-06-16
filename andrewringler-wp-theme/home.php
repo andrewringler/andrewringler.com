@@ -19,6 +19,10 @@ get_header(); ?>
           and the <a href="http://www.playframework.com/">Play Framework</a> (with <a href="http://www.scala-lang.org/">Scala</a>).
           I build software for all stages of development including prototypes, demonstrations and production applications.
         </p>
+		<p>Feel free to reach out to me. You may send me an <a href="mailto:public@andrewringler.com">email</a> or you may send
+			me a message on <a href="https://twitter.com/andrewringler">Twitter</a> or 
+			<a href="http://www.linkedin.com/in/andrewringler">LinkedIn</a>.
+		</p>
 
 
 
