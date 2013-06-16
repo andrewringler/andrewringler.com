@@ -12,7 +12,9 @@ get_header(); ?>
 
       <div id="profile-header">
         <img src="<?php bloginfo('template_directory'); ?>/images/andrew_ringler_carson_beach3.jpg" id="profile-header-image">
-        <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+          <h1><?php bloginfo( 'name' ); ?></h1>
+        </a>
   			<p><?php bloginfo( 'description' ); ?></p>
       </div>
 

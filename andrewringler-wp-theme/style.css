@@ -99,7 +99,9 @@ a:active { /* Improves readability when focused and also mouse hovered in all br
 a img {
 	border: 0;
 }
-
+a {
+	font-weight: 600;
+}
 
 /* =Global
 ----------------------------------------------- */
@@ -119,7 +121,8 @@ textarea {
 }
 
 /* Headings */
-h1,h2,h3,h4,h5,h6 {
+h1,h2,h3,h4,h5,
+.h1, .h2, .h3, .h4, .h5 {
 	clear: both;
 	color: black;
     font-weight: 800;
@@ -129,8 +132,11 @@ h1 {
 	line-height: 2em;
 }
 h3 {
-  margin-top: 1.5em;
-  margin-bottom: 0.25em;
+	font-size: 1.1em;
+	line-height: 1.5;
+	
+  	margin-top: 1.5em;
+  	margin-bottom: 0.25em;
 }
 
 hr {
@@ -319,7 +325,6 @@ textarea {
 a, a:visited {
 	color: steelblue;
     text-decoration: none;
-    font-weight: 600;    
 }
 a:hover,
 a:focus,
@@ -650,4 +655,11 @@ object {
 /* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
 .infinity-end.neverending .site-footer {
 	display: block;
+}
+
+
+/* =Helper Classes
+----------------------------------------------- */
+.visually-hidden {
+	display: none;
 }
