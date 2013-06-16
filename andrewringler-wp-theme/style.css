@@ -51,11 +51,6 @@ html {
 }
 body {
 	background: #fff;
-    color: #333;
-	
-	padding-left: 1em;
-    margin: 4em auto 1em auto;
-    max-width: 850px;
 }
 article,
 aside,
@@ -119,6 +114,17 @@ textarea {
 	font-family: 'Open Sans', sans-serif;
     font-weight: 300;
 }
+
+body {
+    color: #333;
+	
+	padding-left: 1em;
+    margin: 4em auto 1em auto;
+    max-width: 850px;
+}
+
+
+
 
 /* Headings */
 h1,h2,h3,h4,h5,
@@ -471,6 +477,9 @@ a:active {
 
 /* =Content
 ----------------------------------------------- */
+#content {
+  max-width: 500px;
+}
 
 .sticky {
 }
@@ -512,9 +521,6 @@ footer {
   position: relative;
   padding-left: 520px;
   min-height: 250px;
-}
-#profile-content {
-  max-width: 500px;
 }
 #profile-content h3:first-of-type {
   margin-top: 1em;

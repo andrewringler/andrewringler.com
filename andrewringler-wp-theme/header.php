@@ -45,7 +45,7 @@
        <div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'andrewringler_profile_2013' ); ?>"><?php _e( 'Skip to content', 'andrewringler_profile_2013' ); ?></a></div>
 
        <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-     </nav><!-- #site-navigation
+     </nav><!-- #site-navigation -->
 	</header>
 	<!-- #masthead -->
 
