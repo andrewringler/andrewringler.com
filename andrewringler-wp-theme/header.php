@@ -15,37 +15,14 @@
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
-<script type="text/javascript">
-  // add wf-loading class to html while external webfont javascript is loading
-  var root = document.getElementsByTagName('html')[0];
-  if(root.className.replace) {
-    root.className += " wf-loading";    
-  }
-  
-  // remove wf-loading class if fontload fails to
-  setTimeout(function() {
-    var root = document.getElementsByTagName('html')[0];
-    if(root.className){
-      root.className = root.className.replace("wf-loading", "");
-    }
-  },2200);
-
-  WebFontConfig = {
+<script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+<script>
+  WebFont.load({
     google: {
       families: ['Open+Sans:800,300,600:latin']
     },
-    timeout: 2000 // Set the timeout to two seconds
-  };
-  
-  (function() {
-    var wf = document.createElement('script');
-    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-        '://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js';
-    wf.type = 'text/javascript';
-    wf.async = 'true';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(wf, s);
-  })();
+	timeout: 2000 // Set the timeout to two seconds
+  });
 </script>
 
 <?php wp_head(); ?>
