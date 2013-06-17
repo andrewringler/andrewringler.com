@@ -16,12 +16,27 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
 <script type="text/javascript">
+  // add wf-loading class to html while external webfont javascript is loading
+  var root = document.getElementsByTagName('html')[0];
+  if(root.className.replace) {
+    root.className += " wf-loading";    
+  }
+  
+  // remove wf-loading class if fontload fails to
+  setTimeout(function() {
+    var root = document.getElementsByTagName('html')[0];
+    if(root.className){
+      root.className = root.className.replace("wf-loading", "");
+    }
+  },2200);
+
   WebFontConfig = {
     google: {
       families: ['Open+Sans:800,300,600:latin']
-    }
+    },
+    timeout: 2000 // Set the timeout to two seconds
   };
-
+  
   (function() {
     var wf = document.createElement('script');
     wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +

@@ -669,11 +669,37 @@ object {
 }
 
 
+
 /* =Helper Classes
 ----------------------------------------------- */
 .visually-hidden {
 	display: none;
 }
+
+
+
+/* =Font Loading
+----------------------------------------------- */
+.wf-loading h1, 
+.wf-loading h2, 
+.wf-loading h3, 
+.wf-loading p, 
+.wf-loading li, 
+.wf-loading span,
+.wf-loading time {
+	opacity: 0;
+}
+h1, h2, h3, p, li, span, time {
+	opacity: 1;
+	-webkit-transition: opacity 0.15s ease-in-out;
+	-moz-transition: opacity 0.15s ease-in-out;
+	-ms-transition: opacity 0.15s ease-in-out;
+	-o-transition: opacity 0.15s ease-in-out;
+	transition: opacity 0.15s ease-in-out;
+}
+
+
+
 
 /* =Responsive Breakpoints
  * not mobile-first
