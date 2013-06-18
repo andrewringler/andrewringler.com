@@ -688,9 +688,11 @@ object {
 .wf-loading span,
 .wf-loading time {
 	opacity: 0;
+/*	font-family: sans-serif;*/
 }
 h1, h2, h3, p, li, span, time {
 	opacity: 1;
+	font-family: 'Open Sans', sans-serif;
 	-webkit-transition: opacity 0.15s ease-in-out;
 	-moz-transition: opacity 0.15s ease-in-out;
 	-ms-transition: opacity 0.15s ease-in-out;
