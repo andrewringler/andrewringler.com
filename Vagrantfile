@@ -66,7 +66,7 @@ Vagrant::Config.run do |config|
   # end
 
   # Enable provisioning with chef solo, specifying a cookbooks path, roles
-  # path, and data_bags path (all relative to this Vagrantfile), and adding 
+  # path, and data_bags path (all relative to this Vagrantfile), and adding
   # some recipes and/or roles.
   #
   config.vm.provision :chef_solo do |chef|
@@ -82,11 +82,11 @@ Vagrant::Config.run do |config|
     chef.add_recipe "wordpress"
     chef.add_recipe "wordpress::org_plugins"
     chef.add_recipe "wordpress::org_themes"
-  
-    
-    
+
+
+
     chef.json = {
-      # You'll want to change these values if you're paranoid. 
+      # You'll want to change these values if you're paranoid.
       'mysql' => {
         'server_debian_password' => 'jCLTzpYJvBDNR1EzlwnYyX4xt',
         'server_root_password' => '0JR1qLXJkztAbgOBGNBoLzimU',
@@ -95,7 +95,7 @@ Vagrant::Config.run do |config|
       "wordpress" => {
         # Include the list of plugins you'd like installed
         "org_plugins" => {
-          'Debug Bar' => {},
+          # 'Debug Bar' => {},
           #'Bit.ly Service' => {
           #  'path' => 'bitly-service',
           #  'tag' => 'trunk'

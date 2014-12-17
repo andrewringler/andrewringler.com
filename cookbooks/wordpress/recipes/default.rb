@@ -23,8 +23,8 @@ include_recipe "php"
 include_recipe "php::module_mysql"
 include_recipe "apache2::mod_php5"
 
-# Make sure the mysql gem is installed. This looks like it will change with 
-# the release of 0.10.10 and the inclusion of the new chef_gem. 
+# Make sure the mysql gem is installed. This looks like it will change with
+# the release of 0.10.10 and the inclusion of the new chef_gem.
 # code curtesy @hectcastro
 # http://tickets.opscode.com/browse/COOK-1009
 gem_package "mysql" do
@@ -49,17 +49,17 @@ if node['wordpress']['version'] == 'latest'
   require 'digest/sha1'
   require 'open-uri'
   local_file = "#{Chef::Config[:file_cache_path]}/wordpress-latest.tar.gz"
-  latest_sha1 = open('http://wordpress.org/latest.tar.gz.sha1') {|f| f.read }
+  latest_sha1 = open('https://wordpress.org/latest.tar.gz.sha1') {|f| f.read }
 
   remote_file "#{Chef::Config[:file_cache_path]}/wordpress-latest.tar.gz" do
-    source "http://wordpress.org/latest.tar.gz"
+    source "https://wordpress.org/latest.tar.gz"
     mode "0644"
     not_if { File.exists?(local_file) && ( Digest::SHA1.hexdigest(File.read(local_file)) == latest_sha1 ) }
   end
 
 else
   remote_file "#{Chef::Config[:file_cache_path]}/wordpress-#{node['wordpress']['version']}.tar.gz" do
-    source "http://wordpress.org/wordpress-#{node['wordpress']['version']}.tar.gz"
+    source "https://wordpress.org/wordpress-#{node['wordpress']['version']}.tar.gz"
     mode "0644"
   end
 end

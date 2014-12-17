@@ -9,24 +9,36 @@ Contact me at [public@andrewringler.com](mailto:public@andrewringler.com "public
 
 * install https://www.virtualbox.org/
 * install http://vagrantup.com/
-* install https://rvm.io/, then
-    
-    > rvm install 1.9.3
-    
-    > rvm use 1.9.3
-* install some gems:
-   
-    > gem update    
 
-    > gem install librarian  // librarian for Vagrant (https://github.com/applicationsonline/librarian)
+install https://rvm.io/, then
     
-    > gem install compass    // COMPASS for scss compilation (http://compass-style.org/)
-* vagrant up
+	rvm install 1.9.3
+    rvm use 1.9.3
+
+install some gems:
+   
+	gem update
+    gem install librarian  // librarian for Vagrant (https://github.com/applicationsonline/librarian)`
+    gem install compass    // COMPASS for scss compilation (http://compass-style.org/)
+    
+`vagrant up`
+
+Download some plugins
+
+	vagrant ssh
+	sudo chown -R www-data /var/www/wordpress/
+	sudo apt-get install unzip
+	cd /var/www/wordpress/wp-content/plugins
+	sudo wget https://downloads.wordpress.org/plugin/wordpress-importer.0.6.1.zip
+	sudo unzip wordpress-importer.0.6.1.zip
+	sudo chown nobody:nogroup wordpress-importer
+
+
 * visit http://192.168.33.20/ and create a wordpress admin user
 * delete hello world post
 * export wordpress content from andrewringler.com
 * import into wordpress at http://192.168.33.20/
-* activate 'Andrew Ringler 2012' theme
+* activate 'Andrew Ringler 2013' theme
 * setup menus and widgets
 * generate CSS
     
