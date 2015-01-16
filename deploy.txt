@@ -1,3 +1,7 @@
+v0.4
+- update tagline to 'Programmer & Artist'
+- added post thumbnails, make sure featured image is set on all posts
+
 v0.3
 - update tagline to 'Programmer, User Experience Designer, Filmmaker'
 - rename code posts to friendly names
@@ -32,5 +36,5 @@ Add widgets to footer:
   About Me
   Links
   tag cloud
-  
+
 Changed Recent Posts widget title to "Recently"

@@ -9,28 +9,26 @@ get_header(); ?>
 
 <div id="primary" class="content-area">
 	<div id="content" class="site-content" role="main">
-        <h3>Who</h3>
-        <p>You have found the website of Andrew Ringler. I live in Medford Massachusetts.
-          I work as a <span class="title">Senior Software Developer</span> at <a href="http://www.icosystem.com">Icosystem</a> in
-          Cambridge MA. I get to work on incredible projects modeling people's behavior. I am passionate
-          about usability, design and accessibility.
-        </p>
-        <p>Lately, I have been focusing on web technologies like CSS, Javascript, <a href="http://nodejs.org/">Node.js</a> 
-          and the <a href="http://www.playframework.com/">Play Framework</a> (with <a href="http://www.scala-lang.org/">Scala</a>).
-          I build software for all stages of development including prototypes, demonstrations and production applications.
-        </p>
-		<p>Feel free to reach out to me. You may send me an <a href="mailto:public@andrewringler.com">email</a> or you may send
-			me a message on <a href="https://twitter.com/andrewringler">Twitter</a> or 
-			<a href="http://www.linkedin.com/in/andrewringler">LinkedIn</a>.
-		</p>
+				<!--
 
+				Recent
 
+			-->
+			<?php query_posts( array( 'posts_per_page' => 3) ); ?>
+			<?php if (have_posts()) : ?>
+				<h3>Recent</h3>
+				<ul>
+					<?php while (have_posts()) : the_post(); ?>
+						<li><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
+					<?php endwhile; ?>
+				</ul>
+			<?php endif; wp_reset_postdata(); ?>
 
-        <!-- 
-					
+        <!--
+
 					Code
-					
-				-->							
+
+				-->
         <?php query_posts( array( 'posts_per_page' => 15, 'category_name' => 'code') ); ?>
  				  <?php if (have_posts()) : ?>
           <h3>Code</h3>
@@ -38,19 +36,27 @@ get_header(); ?>
             most of my programming projects, the rest you'll find on github at <a href="https://github.com/andrewringler/">github.com/andrewringler</a>
           </p>
 
-					<ul>
+					<ul class="asr-post-list">
 							<?php while (have_posts()) : the_post(); ?>
-								<li><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
- 					    <?php endwhile; ?>	
+								<li>
+									<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?>
+										<?php
+										if ( has_post_thumbnail() ) {
+											the_post_thumbnail('thumbnail');
+										}
+										?>										
+									</a>
+								</li>
+ 					    <?php endwhile; ?>
 					</ul>
- 					<?php endif; wp_reset_postdata(); ?>          
+ 					<?php endif; wp_reset_postdata(); ?>
 
 
-          <!-- 
+          <!--
 
   					Film
 
-  				-->							
+  				-->
           <?php query_posts( array( 'posts_per_page' => 15, 'category_name' => 'film') ); ?>
    				  <?php if (have_posts()) : ?>
             <h3>Film</h3>
@@ -60,28 +66,47 @@ get_header(); ?>
   					<ul>
   							<?php while (have_posts()) : the_post(); ?>
   								<li><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
-   					    <?php endwhile; ?>	
+   					    <?php endwhile; ?>
   					</ul>
    					<?php endif; wp_reset_postdata(); ?>
 
 
 
-            <!-- 
+            <!--
 
     					Writing
 
-    				-->							
+    				-->
             <?php query_posts( array( 'posts_per_page' => 15, 'category_name' => 'writing') ); ?>
      				  <?php if (have_posts()) : ?>
               <h3>Writing</h3>
     					<ul>
     							<?php while (have_posts()) : the_post(); ?>
     								<li><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
-     					    <?php endwhile; ?>	
+     					    <?php endwhile; ?>
     					</ul>
      					<?php endif; wp_reset_postdata(); ?>
-      
-      
+
+
+					<h3>About</h3>
+					<p>I am a professional software developer and artist. I bring together performance, comedy, filmmaking,
+						2D arts, and code to create engaging experiences.
+						I am an MFA candidate at the <a href="http://dynamicmediainstitute.org/">Dynamic Media Institute of MassArt</a>.
+						I live in Boston.
+					</p>
+
+					<p>Feel free to email me at <a href="mailto:public@andrewringler.com">public@andrewringler.com</a>.
+					</p>
+					<p>
+						<h4>You can also find me on</h4>
+						<ul>
+							<li><a href="https://twitter.com/andrewringler">Twitter @andrewringler</a></li>
+							<li><a href="http://www.linkedin.com/in/andrewringler">LinkedIn</a></li>
+							<li><a href="https://github.com/andrewringler">GitHub</a></li>
+							<li><a href="https://www.facebook.com/andrew.ringler">Facebook</a></li>
+						</ul>
+					</p>
+
 		</div><!-- #content -->
 	</div><!-- #primary -->
 

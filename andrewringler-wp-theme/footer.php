@@ -12,10 +12,10 @@
 
 	<footer>
     <p>
-      Copyright <span class="copyright">&copy; Andrew Ringler 2013
+      Copyright <span class="copyright">&copy; Andrew Ringler 2015
     </p>
   </footer>
-	
+
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
