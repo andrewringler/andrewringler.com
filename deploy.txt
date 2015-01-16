@@ -1,6 +1,8 @@
 v0.4
 - update tagline to 'Programmer & Artist'
 - added post thumbnails, make sure featured image is set on all posts
+- changed thumbnails to 150x150 http://andrewringler.com/wp/wp-admin/options-media.php,
+  regenerate thumbnails https://wordpress.org/plugins/regenerate-thumbnails/
 
 v0.3
 - update tagline to 'Programmer, User Experience Designer, Filmmaker'

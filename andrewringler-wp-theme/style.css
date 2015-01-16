@@ -543,6 +543,7 @@ body.home #profile-header {
 }
 .asr-post-list li .wp-post-image {
 	display: block;
+	max-width: 150px;
 }
 .asr-post-list li {
 	margin-bottom: 2em;
