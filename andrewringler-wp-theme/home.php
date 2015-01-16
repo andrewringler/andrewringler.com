@@ -17,9 +17,18 @@ get_header(); ?>
 			<?php query_posts( array( 'posts_per_page' => 3) ); ?>
 			<?php if (have_posts()) : ?>
 				<h3>Recent</h3>
-				<ul>
+				<ul class="asr-post-list">
 					<?php while (have_posts()) : the_post(); ?>
-						<li><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
+						<li>
+							<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+								<?php the_title(); ?>
+								<?php
+								if ( has_post_thumbnail() ) {
+									the_post_thumbnail('large');
+								}
+								?>
+							</a>
+						</li>
 					<?php endwhile; ?>
 				</ul>
 			<?php endif; wp_reset_postdata(); ?>
