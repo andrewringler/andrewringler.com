@@ -119,14 +119,12 @@ body {
     color: #333;
 
 	padding-left: 1em;
-    margin: 0.5em auto 1em auto;
+    margin: 0.5em 2em 1em 2em;
     max-width: 850px;
 }
 body.home {
-    margin: 4em auto 1em auto;
+	margin: 0.5em 2em 1em 2em;
 }
-
-
 
 /* Headings */
 h1,h2,h3,h4,h5,
@@ -481,6 +479,10 @@ a:active {
 	}
 }
 
+nav { list-style: none; display: inline-block; margin-bottom: 3em; }
+nav li { display: inline; margin-right: 1em; }
+
+
 /* =Content
 ----------------------------------------------- */
 #content {
@@ -545,6 +547,21 @@ body.home #profile-header {
 	display: block;
 	max-width: 150px;
 	margin-bottom: 2em;
+}
+body.home {
+	background-color: black; color: white;
+	background-color: rgb(121,13,30);
+}
+body.home a, a:visited {
+	color: white;
+}
+body.home h1,h2,h3,h4 {
+	color: white;
+}
+body.home canvas {
+	z-index: -1;
+	position: absolute;
+	left: 0; top: 0;
 }
 
 

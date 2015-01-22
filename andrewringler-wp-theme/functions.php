@@ -119,6 +119,12 @@ function andrewringler_profile_2013_scripts() {
 	if ( is_singular() && wp_attachment_is_image() ) {
 		wp_enqueue_script( 'andrewringler_profile_2013-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 	}
+
+	if( is_home()) {
+		wp_enqueue_script( 'andrewringler_profile_2015-p5js-lib', get_template_directory_uri() . '/js/p5.min.js', array(), '20150122', true );
+		wp_enqueue_script( 'andrewringler_profile_2015-squares-p5js', get_template_directory_uri() . '/js/sketch.js', array(), '20150122', true );
+	}
+
 }
 add_action( 'wp_enqueue_scripts', 'andrewringler_profile_2013_scripts' );
 

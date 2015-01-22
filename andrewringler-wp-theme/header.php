@@ -11,10 +11,9 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <title><?php wp_title( '|', true, 'right' ); ?></title>
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-
 <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
 <script>
   WebFont.load({
@@ -38,23 +37,17 @@
 
        <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
      </nav><!-- #site-navigation -->
-	 
-     <div id="profile-header">
-		 <?php if( is_home() ) { ?>
-	         <img src="<?php bloginfo('template_directory'); ?>/images/andrew_ringler_carson_beach.jpg" id="profile-header-image">
-			 <div class="description">
-				 <h1><?php bloginfo( 'name' ); ?></h1>
-		<?php } else { ?> 
-		        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-		          <h1><?php bloginfo( 'name' ); ?></h1>
-		        </a>
-		<?php } ?> 
-		 
+
+     <div>
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+          <h1><?php bloginfo( 'name' ); ?></h1>
+        </a>
+
 				<p><?php bloginfo( 'description' ); ?></p>
 			</div>
      </div>
-	 
-	 
+
+
 	</header>
 	<!-- #masthead -->
 
