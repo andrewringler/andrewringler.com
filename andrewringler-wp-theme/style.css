@@ -479,7 +479,7 @@ a:active {
 	}
 }
 
-nav { list-style: none; display: inline-block; margin-bottom: 3em; }
+nav { list-style: none; display: inline-block; margin-bottom: 2em; }
 nav li { display: inline; margin-right: 1em; }
 
 
@@ -552,10 +552,10 @@ body.home {
 	background-color: black; color: white;
 	background-color: rgb(121,13,30);
 }
-body.home a, a:visited {
+body.home a, body.home a:visited {
 	color: white;
 }
-body.home h1,h2,h3,h4 {
+body.home h1, body.home h2, body.home h3, body.home h4 {
 	color: white;
 }
 body.home canvas {
@@ -731,11 +731,11 @@ h1, h2, h3, p, li, span, time {
 	  max-width: 95%;
 	}
 	body.home {
-	    margin-top: 0.5em;
+	   margin: 0.25em;
 	}
 
 	body.home #profile-header {
-	  	min-height: inherit;
+	  min-height: inherit;
 		padding-left: 0;
 		margin: 0;
 	}
@@ -750,9 +750,11 @@ h1, h2, h3, p, li, span, time {
 	}
 	#profile-header h1 {
 		font-size: 1em;
+		margin-bottom: 0.25em;
 	}
 	#profile-header p {
 		font-size: 1em;
 		max-width: 100%;
+		margin-top: 0.5em;
 	}
 }

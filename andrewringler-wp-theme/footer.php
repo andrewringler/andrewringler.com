@@ -11,9 +11,7 @@
 	</div><!-- #main -->
 
 	<footer>
-    <p>
-      Copyright <span class="copyright">&copy; Andrew Ringler 2015
-    </p>
+    <!-- Copyright <span class="copyright">&copy; Andrew Ringler 2015 -->
   </footer>
 
 </div><!-- #page -->
