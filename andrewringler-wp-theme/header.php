@@ -40,10 +40,9 @@
 
      <div>
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-          <h1><?php bloginfo( 'name' ); ?></h1>
+          <h1 id="blogname"><?php bloginfo( 'name' ); ?></h1>
         </a>
 
-				<p><?php bloginfo( 'description' ); ?></p>
 			</div>
      </div>
 

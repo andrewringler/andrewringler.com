@@ -480,8 +480,17 @@ a:active {
 }
 
 nav { list-style: none; display: inline-block; margin-bottom: 2em; }
-nav li { display: inline; margin-right: 1em; }
-
+nav li { display: inline-block; margin-right: 0.75em; padding-right: 0.2em; }
+#blogname { display: inline-block; }
+body.home nav li a {	padding: 1px 2px; }
+body.home nav li a:hover,
+body.home nav li a:focus,
+body.home nav li a:active {
+	text-decoration: none;
+	background-color: white;
+	color: black;
+	color: rgb(121,13,30) !important;
+}
 
 /* =Content
 ----------------------------------------------- */
@@ -524,12 +533,14 @@ body.home #profile-header {
   padding-left: 520px;
   min-height: 250px;
 }
+body.home #blogname { display: inline; }
+body.home #description { font-weight: normal; display: inline; margin-left: 3em; }
 #profile-content h3:first-of-type {
   margin-top: 1em;
 }
 
 #profile-header h1 {
-  margin-bottom: 0.25em;
+  margin-bottom: 0em;
   line-height: 1;
   color: steelblue;
 }
@@ -563,7 +574,6 @@ body.home canvas {
 	position: absolute;
 	left: 0; top: 0;
 }
-
 
 
 /* =Asides
@@ -757,4 +767,12 @@ h1, h2, h3, p, li, span, time {
 		max-width: 100%;
 		margin-top: 0.5em;
 	}
+}
+
+
+@media screen and (min-height:20em) {
+	#aboutme { position: absolute; bottom: 0.25em; left: 3em; max-width: 35em; }
+}
+@media only screen and (max-device-width: 900px) and (min-height:20em) {
+	#aboutme { left: 1em; margin-right: 0.25em;}
 }

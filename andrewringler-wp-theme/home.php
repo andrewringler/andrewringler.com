@@ -19,7 +19,7 @@ get_header(); ?>
 			</ul>
 		</nav>
 
-		<p>I am a boston based professional software developer and artist. I bring together performance, comedy, filmmaking, 2D arts, and code to create engaging experiences.</p>
+		<p id="aboutme">I am a boston based professional software developer and artist. I bring together performance, comedy, filmmaking, 2D arts, and code to create engaging experiences.</p>
 
 		</div><!-- #content -->
 	</div><!-- #primary -->
