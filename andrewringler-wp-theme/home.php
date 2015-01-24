@@ -12,10 +12,10 @@ get_header(); ?>
 
 		<nav>
 			<ul class="nav">
-				<li><a href="http://andrewringler.com/about">About</a></li>
-				<li><a href="http://andrewringler.com/category/code/">Code</a></li>
-				<li><a href="http://andrewringler.com/category/film/">Film</a></li>
-				<li><a href="http://andrewringler.com/category/writing/">Writing</a></li>
+				<li><a href="https://andrewringler.com/about">About</a></li>
+				<li><a href="https://andrewringler.com/category/code/">Code</a></li>
+				<li><a href="https://andrewringler.com/category/film/">Film</a></li>
+				<li><a href="https://andrewringler.com/category/writing/">Writing</a></li>
 			</ul>
 		</nav>
     <p id="abstract">I am a boston based professional software developer and artist. I bring together performance, comedy, filmmaking, 2D arts, and code to create engaging experiences.</p>
