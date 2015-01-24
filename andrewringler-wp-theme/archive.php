@@ -18,10 +18,10 @@ get_header(); ?>
 				<h1 class="page-title">
 					<?php
 						if ( is_category() ) :
-							printf( __( 'Category Archives: %s', 'andrewringler_profile_2013' ), '<span>' . single_cat_title( '', false ) . '</span>' );
+							printf( __( ' %s', 'andrewringler_profile_2013' ), '<span>' . single_cat_title( '', false ) . '</span>' );
 
 						elseif ( is_tag() ) :
-							printf( __( 'Tag Archives: %s', 'andrewringler_profile_2013' ), '<span>' . single_tag_title( '', false ) . '</span>' );
+							printf( __( '%s', 'andrewringler_profile_2013' ), '<span>' . single_tag_title( '', false ) . '</span>' );
 
 						elseif ( is_author() ) :
 							/* Queue the first post, that way we know
