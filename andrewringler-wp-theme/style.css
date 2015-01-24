@@ -479,22 +479,7 @@ a:active {
 	}
 }
 
-nav { list-style: none; display: inline-block; margin-bottom: 0.5em; }
-nav li { display: inline-block; margin-right: 0.75em; padding-right: 0.2em; }
-#blogname { display: inline-block; }
-body.home nav li a { font-size: 0.9em; padding: 1px 2px; }
-body.home nav li a:hover,
-body.home nav li a:focus,
-body.home nav li a:active {
-	text-decoration: none;
-	background-color: white;
-	color: black;
-	color: rgb(121,13,30) !important;
-}
-.home-post-title { font-weight: 300; position: relative; padding-left: 5.5em; }
-.home-post-title a { font-weight: 300; }
-.home-post-date { position: absolute; left: 0; top: 0; font-weight: 600; }
-#abstract { font-size: 1.2em; margin-bottom: 4em; font-weight: 300; font-style: italic; }
+
 
 
 /* =Content
@@ -567,20 +552,30 @@ body.home #description { font-weight: normal; display: inline; margin-left: 3em;
 	max-width: 150px;
 	margin-bottom: 2em;
 }
-body.home {
-	background-color: black; color: white;
-	background-color: rgb(121,13,30);
-}
-body.home a, body.home a:visited {
-	color: white;
-}
-body.home h1, body.home h2, body.home h3, body.home h4 {
-	color: white;
-}
 body.home canvas {
 	z-index: -1;
 	position: absolute;
 	left: 0; top: 0;
+}
+nav { list-style: none; display: inline-block; margin-bottom: 0.5em; }
+nav li { display: inline-block; margin-right: 0.75em; padding-right: 0.2em; }
+#blogname { display: inline-block; text-decoration: none !important; }
+#blogname-container:hover, #blogname-container:focus, #blogname-container:active { text-decoration: none; }
+body.home nav li a { font-size: 0.9em; padding: 1px 2px; }
+body.home nav li a:hover,
+body.home nav li a:focus,
+body.home nav li a:active {
+	text-decoration: none;
+}
+.home-post-title { font-weight: 300; position: relative; padding-left: 5em; }
+.home-post-title a { font-weight: 300; }
+.home-post-date { position: absolute; left: 0; top: 0.3em; font-weight: 800; font-size: 0.8em; color: #444; }
+#abstract { font-size: 1.2em; margin-bottom: 4em; font-weight: 300; font-style: italic; }
+.cat-links a, .cat-links a:visited {
+	font-weight: 800 !important;
+	text-transform: lowercase;
+	font-size: 0.8em;
+	margin-right: 0.5em;
 }
 
 

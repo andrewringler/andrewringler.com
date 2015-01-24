@@ -39,7 +39,7 @@
      </nav><!-- #site-navigation -->
 
      <div>
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" id="blogname-container">
           <h1 id="blogname"><?php bloginfo( 'name' ); ?></h1>
         </a>
 

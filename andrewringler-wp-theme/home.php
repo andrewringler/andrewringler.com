@@ -40,6 +40,17 @@ get_header(); ?>
         ?>
         <li class="home-post-title">
           <span class="home-post-date"><?php the_time('Y M') ?></span>
+
+          <?php
+          /* translators: used between list items, there is a space after the comma */
+          $categories_list = get_the_category_list( __( ', ', 'andrewringler_profile_2013' ) );
+          if ( $categories_list && andrewringler_profile_2013_categorized_blog() ) :
+            ?>
+            <span class="cat-links">
+              <?php printf( __( '%1$s', 'andrewringler_profile_2013' ), $categories_list ); ?>
+            </span>
+          <?php endif; // End if categories ?>
+
           <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
             <?php the_title(); ?>
           </a>
