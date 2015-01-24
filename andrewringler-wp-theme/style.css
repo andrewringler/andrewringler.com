@@ -121,9 +121,6 @@ body {
   margin: 0.5em 2em 1em 2em;
   max-width: 850px;
 }
-body.home {
-	margin: 0.5em 2em 1em 0.75em;
-}
 
 /* Headings */
 h1,h2,h3,h4,h5,
@@ -560,10 +557,10 @@ nav { list-style: none; display: inline-block; margin-bottom: 0.5em; }
 nav li { display: inline-block; margin-right: 0.75em; padding-right: 0.2em; }
 #blogname { display: inline-block; text-decoration: none !important; }
 #blogname-container:hover, #blogname-container:focus, #blogname-container:active { text-decoration: none; }
-body.home nav li a { font-size: 0.9em; padding: 1px 2px; }
-body.home nav li a:hover,
-body.home nav li a:focus,
-body.home nav li a:active {
+nav li a { font-size: 0.9em; padding: 1px 2px; }
+nav li a:hover,
+nav li a:focus,
+nav li a:active {
 	text-decoration: none;
 }
 .home-post-title { font-weight: 300; position: relative; padding-left: 5em; }
@@ -751,7 +748,7 @@ h1, h2, h3, p, li, span, time {
 	  max-width: 95%;
 	}
 	body {
-	   margin: 0.5em 0.5em 1em 0.25em;
+	   margin: 0.25em 0.4em 1em 0.15em;
 	}
 
 	body.home #profile-header {

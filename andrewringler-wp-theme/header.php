@@ -42,10 +42,17 @@
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" id="blogname-container">
           <h1 id="blogname"><?php bloginfo( 'name' ); ?></h1>
         </a>
-
 			</div>
      </div>
-
+     <nav>
+       <ul class="nav">
+         <li><a href="https://andrewringler.com/about">About</a></li>
+         <li><a href="https://andrewringler.com/category/code/">Code</a></li>
+         <li><a href="https://andrewringler.com/category/film/">Film</a></li>
+         <li><a href="https://andrewringler.com/category/writing/">Writing</a></li>
+       </ul>
+     </nav>
+     
 
 	</header>
 	<!-- #masthead -->
