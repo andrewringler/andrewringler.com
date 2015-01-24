@@ -745,10 +745,10 @@ h1, h2, h3, p, li, span, time {
 ----------------------------------------------- */
 @media only screen and (max-width: 990px) {
 	#content {
-	  max-width: 95%;
+	  max-width: 100%;
 	}
 	body {
-	   margin: 0.25em 0.4em 1em 0.15em;
+	   margin: 0.25em 0.3em 1em 0.1em;
 	}
 
 	body.home #profile-header {
