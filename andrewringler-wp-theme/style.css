@@ -491,10 +491,10 @@ body.home nav li a:active {
 	color: black;
 	color: rgb(121,13,30) !important;
 }
-.home-post-title { font-weight: normal; position: relative; }
-.home-post-date { position: absolute; left: 0; top: 0; }
-.home-post-text { padding-left: 5em; }
-#abstract { font-size: 1.2em; margin-bottom: 4em; font-style: italic; }
+.home-post-title { font-weight: 300; position: relative; padding-left: 5.5em; }
+.home-post-title a { font-weight: 300; }
+.home-post-date { position: absolute; left: 0; top: 0; font-weight: 600; }
+#abstract { font-size: 1.2em; margin-bottom: 4em; font-weight: 300; font-style: italic; }
 
 
 /* =Content

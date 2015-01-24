@@ -18,7 +18,7 @@
 <script>
   WebFont.load({
     google: {
-      families: ['Open+Sans:800,300,600:latin']
+      families: ['Open+Sans:800,300,300italic,600:latin']
     },
 	timeout: 2000 // Set the timeout to two seconds
   });

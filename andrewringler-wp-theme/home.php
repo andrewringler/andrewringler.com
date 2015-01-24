@@ -38,9 +38,9 @@ get_header(); ?>
         */
         //get_template_part( 'content', get_post_format() );
         ?>
-        <li>
-          <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>" class="home-post-title">
-            <span class="home-post-date"><?php the_time('Y M') ?></span>
+        <li class="home-post-title">
+          <span class="home-post-date"><?php the_time('Y M') ?></span>
+          <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
             <?php the_title(); ?>
           </a>
         </li>
