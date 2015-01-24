@@ -46,9 +46,9 @@ function draw() {
 }
 
 // https://github.com/lmccart/p5.js/wiki/p5.js-overview
-function touchStarted() {
-
-}
-function touchMoved() {
-  return false;
-}
+// function touchStarted() {
+//
+// }
+// function touchMoved() {
+//   return false;
+// }

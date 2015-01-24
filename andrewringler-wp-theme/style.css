@@ -491,8 +491,9 @@ body.home nav li a:active {
 	color: black;
 	color: rgb(121,13,30) !important;
 }
-.home-post-title { font-weight: normal; position: relative; padding-left: 5em;}
-.home-post-date { position: absolute; left: 0; }
+.home-post-title { font-weight: normal; position: relative; }
+.home-post-date { position: absolute; left: 0; top: 0; }
+.home-post-text { padding-left: 5em; }
 #abstract { font-size: 1.2em; margin-bottom: 4em; font-style: italic; }
 
 
