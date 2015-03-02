@@ -31,6 +31,11 @@ get_header(); ?>
         ?>
         <li class="home-post-title">
           <span class="home-post-date"><?php the_time('Y M') ?></span>
+					<?php
+					if ( has_post_thumbnail() ) {
+						the_post_thumbnail('thumbnail');
+					}
+					?>
 
           <?php
           /* translators: used between list items, there is a space after the comma */
@@ -45,6 +50,7 @@ get_header(); ?>
           <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
             <?php the_title(); ?>
           </a>
+
         </li>
       <?php endwhile; ?>
     </ul>

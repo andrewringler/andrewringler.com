@@ -552,6 +552,7 @@ body.home canvas {
 	z-index: -1;
 	position: absolute;
 	left: 0; top: 0;
+	height: 100%;
 }
 nav { list-style: none; display: inline-block; margin-bottom: 0.5em; }
 nav li { display: inline-block; margin-right: 0.75em; padding-right: 0.2em; }
@@ -576,6 +577,18 @@ nav li a:active {
 .entry-content, p, li {
 	max-width: 40em;
 }
+body.home .attachment-thumbnail {
+	position:absolute;
+	left: 0; top: 1.5em;
+	width: auto;
+	max-width: 70px;
+	height: 35px;
+	max-height: 35px;
+}
+.home-post-title {
+	min-height: 5em;
+}
+
 
 /* =Asides
 ----------------------------------------------- */

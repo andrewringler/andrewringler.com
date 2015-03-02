@@ -5,7 +5,7 @@ var frameRate = 10;
 var time = 0;
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(windowWidth, displayHeight);
   colorMode(RGB, 255);
   frameRate(frameRate);
   blendMode(BLEND);
@@ -15,9 +15,9 @@ function setup() {
 }
 
 function draw() {
-  if(w != windowWidth || h != windowHeight){
+  if(w != windowWidth || h != displayHeight){
     w = windowWidth;
-    h = windowHeight;
+    h = displayHeight;
     createCanvas(w, h);
     background(255);
   }
