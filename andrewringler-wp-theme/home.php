@@ -9,7 +9,7 @@ get_header(); ?>
 
 <div id="primary" class="content-area">
 	<div id="content" class="site-content" role="main">
-    <p id="abstract">I am a boston based professional software developer and artist. I bring together performance, comedy, filmmaking, 2D arts, and code to create engaging experiences.</p>
+    <p id="abstract">I am a boston based professional software developer and artist. I bring together performance, comedy, filmmaking, visual arts, and code to create engaging experiences.</p>
 
     <?php if ( have_posts() ) : ?>
 
