@@ -1,16 +1,7 @@
 #!/bin/sh
 
-E_BADARGS=85
-if [ $# != 2 ]
-	then
-	  PROG_NAME=`basename $0`
-	  echo "$PROG_NAME: requires 2 parameters"
-	  echo "usage: $PROG_NAME <hostname> <remote-path-to-wordpress-dir>"
-	  exit $E_BADARGS
-	fi
-	
-HOST=$1
-WP_DIR=$2
+HOST=andrewringler.com
+WP_DIR=/home/andrewringler/andrewringler.com/www/wp
 THEME_LOCAL=andrewringler-wp-theme/
 THEME_REMOTE="$WP_DIR/wp-content/themes/"
 FAVICON_LOCAL="andrewringler-wp-theme/favicon.ico"

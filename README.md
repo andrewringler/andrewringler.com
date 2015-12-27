@@ -11,20 +11,25 @@ Contact me at [public@andrewringler.com](mailto:public@andrewringler.com "public
 
 * visit http://192.168.33.10/ and http://192.168.33.10/wp-admin/, user: admin, pass: admin
 * delete default posts and pages
-* export Wordpress content from andrewringler.com to exports
-* import db backup XML to local install
-  
+
+
+### Import Db from andrewringler.com
+First export Wordpress content from andrewringler.com to exports then:
+
     vagrant ssh
     wp plugin install /vagrant/plugins/WordPress-Importer-master.zip
     wp plugin activate WordPress-Importer-master
     wp wxr-importer import /vagrant/exports/andrewringler_EXPORTFILE_.xml
     wp plugin deactivate WordPress-Importer-master
 
+### Activate Theme
 * activate 'Andrew Ringler 2015' theme
 * setup menus and widgets
-    
 
+    
 ## TODO
+
+
 * post thumbnails    
 * Should look over h5bp .htaccess file, decide what features I want to pull into andrewringler.com
 * static.andrewringler.com for serving up image assets

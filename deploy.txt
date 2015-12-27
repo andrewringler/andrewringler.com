@@ -1,5 +1,6 @@
 v0.5
 - changed to http://vccw.cc for Vagrant configuration
+- updated pushToProduction script
 
 v0.4
 - update tagline to 'Programmer & Artist'
