@@ -5,3 +5,9 @@ css
 ./node_modules
 node_modules/
 .sass-cache/
+.bundle
+.idea/
+Movefile
+vendor
+www
+exports/

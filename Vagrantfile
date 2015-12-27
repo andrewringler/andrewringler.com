@@ -1,140 +1,200 @@
-# -*- mode: ruby -*-
-# vi: set ft=ruby :
+# encoding: utf-8
+# vim: ft=ruby expandtab shiftwidth=2 tabstop=2
 
-Vagrant::Config.run do |config|
-  # All Vagrant configuration is done here. The most common configuration
-  # options are documented and commented below. For a complete reference,
-  # please see the online documentation at vagrantup.com.
+require 'yaml'
 
-  # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "lucid32"
+Vagrant.require_version '>= 1.5'
 
-  # The url from where the 'config.vm.box' box will be fetched if it
-  # doesn't already exist on the user's system.
-  config.vm.box_url = "http://files.vagrantup.com/lucid32.box"
+Vagrant.configure(2) do |config|
 
-  # Boot with a GUI so you can see the screen. (Default is headless)
-  # config.vm.boot_mode = :gui
+  vccw_version = '2.18.0';
 
-  # Assign this VM to a host-only network IP, allowing you to access it
-  # via the IP. Host-only networks can talk to the host machine as well as
-  # any other machines on the same network, but cannot be accessed (through this
-  # network interface) by any external networks.
-  #config.vm.network :hostonly, "192.168.33.20"
+  _conf = YAML.load(
+    File.open(
+      File.join(File.dirname(__FILE__), 'provision/default.yml'),
+      File::RDONLY
+    ).read
+  )
 
-  # Assign this VM to a bridged network, allowing you to connect directly to a
-  # network using the host's network device. This makes the VM appear as another
-  # physical device on your network.
-  config.vm.network :bridged
+  if File.exists?(File.join(ENV["HOME"], '.vccw/config.yml'))
+    _custom = YAML.load(
+      File.open(
+        File.join(ENV["HOME"], '.vccw/config.yml'),
+        File::RDONLY
+      ).read
+    )
+    _conf.merge!(_custom) if _custom.is_a?(Hash)
+  end
 
-  # Forward a port from the guest to the host, which allows for outside
-  # computers to access the VM, whereas host only networking does not.
-  #config.vm.forward_port 80, 8080
+  if File.exists?(File.join(File.dirname(__FILE__), 'site.yml'))
+    _site = YAML.load(
+      File.open(
+        File.join(File.dirname(__FILE__), 'site.yml'),
+        File::RDONLY
+      ).read
+    )
+    _conf.merge!(_site) if _site.is_a?(Hash)
+  end
 
-  # Share an additional folder to the guest VM. The first argument is
-  # an identifier, the second is the path on the guest to mount the
-  # folder, and the third is the path on the host to the actual folder.
-  # config.vm.share_folder "v-data", "/vagrant_data", "../data"
+  if File.exists?(_conf['chef_cookbook_path'])
+    chef_cookbooks_path = _conf['chef_cookbook_path']
+  elsif File.exists?(File.join(File.dirname(__FILE__), _conf['chef_cookbook_path']))
+    chef_cookbooks_path = File.join(File.dirname(__FILE__), _conf['chef_cookbook_path'])
+  else
+    puts "Can't find "+_conf['chef_cookbook_path']+'. Please check chef_cookbooks_path in the config.'
+    exit 1
+  end
 
-  # Mount main theme
-  config.vm.share_folder "theme", "/var/www/wordpress/wp-content/themes/andrewringler-wp-theme", "./andrewringler-wp-theme", :owner => "www-data", :group => "www-data"
+  config.vm.define _conf['hostname'] do |v|
+  end
 
-  # Example Plugin
-  # config.vm.share_folder "my-plugin", "/var/www/wordpress/wp-content/plugins/my-plugin", "~/my-plugin"
+  config.vm.box = ENV['wp_box'] || _conf['wp_box']
+  config.ssh.forward_agent = true
 
-  # Enable provisioning with Puppet stand alone.  Puppet manifests
-  # are contained in a directory path relative to this Vagrantfile.
-  # You will need to create the manifests directory and a manifest in
-  # the file base.pp in the manifests_path directory.
-  #
-  # An example Puppet manifest to provision the message of the day:
-  #
-  # # group { "puppet":
-  # #   ensure => "present",
-  # # }
-  # #
-  # # File { owner => 0, group => 0, mode => 0644 }
-  # #
-  # # file { '/etc/motd':
-  # #   content => "Welcome to your Vagrant-built virtual machine!
-  # #               Managed by Puppet.\n"
-  # # }
-  #
-  # config.vm.provision :puppet do |puppet|
-  #   puppet.manifests_path = "manifests"
-  #   puppet.manifest_file  = "base.pp"
-  # end
+  config.vm.box_check_update = true
 
-  # Enable provisioning with chef solo, specifying a cookbooks path, roles
-  # path, and data_bags path (all relative to this Vagrantfile), and adding
-  # some recipes and/or roles.
-  #
+  config.vm.hostname = _conf['hostname']
+  config.vm.network :private_network, ip: _conf['ip']
+
+  config.vm.synced_folder ".", "/vagrant", :mount_options => ['dmode=755', 'fmode=644']
+  config.vm.synced_folder _conf['sync_folder'], _conf['document_root'], :create => "true", :mount_options => ['dmode=755', 'fmode=644']
+
+  if Vagrant.has_plugin?('vagrant-hostsupdater')
+    config.hostsupdater.remove_on_suspend = true
+  end
+
+  if Vagrant.has_plugin?('vagrant-vbguest')
+    config.vbguest.auto_update = false
+  end
+
+  config.vm.provider :virtualbox do |vb|
+    vb.name = _conf['hostname']
+    vb.memory = _conf['memory'].to_i
+    vb.cpus = _conf['cpus'].to_i
+    if 1 < _conf['cpus'].to_i
+      vb.customize ['modifyvm', :id, '--ioapic', 'on']
+    end
+    vb.customize ['modifyvm', :id, '--natdnsproxy1', 'on']
+    vb.customize ['modifyvm', :id, '--natdnshostresolver1', 'on']
+  end
+
+  if 'miya0001/vccw' != config.vm.box && 'provision' != ARGV[0]
+    config.vm.provision 'shell',
+        inline: 'curl -L https://www.opscode.com/chef/install.sh | sudo bash -s -- -v 11'
+  end
+
+  if File.exists?(File.join(File.dirname(__FILE__), 'provision-pre.sh')) then
+    config.vm.provision :shell, :path => File.join( File.dirname(__FILE__), 'provision-pre.sh' )
+  end
+
   config.vm.provision :chef_solo do |chef|
-    chef.cookbooks_path = "cookbooks"
-  #   chef.roles_path = "../my-recipes/roles"
-  #   chef.data_bags_path = "../my-recipes/data_bags"
-  #   chef.add_recipe "mysql"
-  #   chef.add_role "web"
-  #
 
-    chef.add_recipe 'apt'
-    chef.add_recipe 'build-essential'
-    chef.add_recipe "wordpress"
-    chef.add_recipe "wordpress::org_plugins"
-    chef.add_recipe "wordpress::org_themes"
-
-
+    chef.cookbooks_path = [
+      File.join(chef_cookbooks_path, 'cookbooks'),
+      File.join(chef_cookbooks_path, 'site-cookbooks')
+    ]
 
     chef.json = {
-      # You'll want to change these values if you're paranoid.
-      'mysql' => {
-        'server_debian_password' => 'jCLTzpYJvBDNR1EzlwnYyX4xt',
-        'server_root_password' => '0JR1qLXJkztAbgOBGNBoLzimU',
-        'server_repl_password' => 'eHPBCSqMu9RrFAYsCkxZuil5s'
+      :apache => {
+        :docroot_dir  => _conf['document_root'],
+        :user         => _conf['user'],
+        :group        => _conf['group'],
+        :listen_ports => ['80', '443']
       },
-      "wordpress" => {
-        # Include the list of plugins you'd like installed
-        "org_plugins" => {
-          # 'Debug Bar' => {},
-          #'Bit.ly Service' => {
-          #  'path' => 'bitly-service',
-          #  'tag' => 'trunk'
-          #}
+      :php => {
+        :packages => %w(php php-cli php-devel php-mbstring php-gd php-xml php-mysql php-pecl-xdebug),
+        :directives => {
+            'default_charset'            => 'UTF-8',
+            'mbstring.language'          => 'neutral',
+            'mbstring.internal_encoding' => 'UTF-8',
+            'date.timezone'              => 'UTC',
+            'short_open_tag'             => 'Off',
+            'session.save_path'          => '/tmp'
+        }
+      },
+      :mysql => {
+        :bind_address           => '0.0.0.0',
+        :server_debian_password => 'wordpress',
+        :server_root_password   => 'wordpress',
+        :server_repl_password   => 'wordpress'
+      },
+      'wpcli' => {
+        :user              => _conf['user'],
+        :group              => _conf['group'],
+        :wp_version        => ENV['wp_version'] || _conf['version'],
+        :wp_host           => _conf['hostname'],
+        :wp_home           => _conf['wp_home'],
+        :wp_siteurl        => _conf['wp_siteurl'],
+        :wp_docroot        => _conf['document_root'],
+        :locale            => ENV['wp_lang'] || _conf['lang'],
+        :admin_user        => _conf['admin_user'],
+        :admin_password    => _conf['admin_pass'],
+        :admin_email       => _conf['admin_email'],
+        :default_plugins   => _conf['plugins'],
+        :default_theme     => _conf['theme'],
+        :title             => _conf['title'],
+        :is_multisite      => _conf['multisite'],
+        :force_ssl_admin   => _conf['force_ssl_admin'],
+        :debug_mode        => _conf['wp_debug'],
+        :savequeries       => _conf['savequeries'],
+        :theme_unit_test   => _conf['theme_unit_test'],
+        :theme_unit_test_data_url => _conf['theme_unit_test_uri'],
+        :gitignore         => File.join(_conf['document_root'], ".gitignore"),
+        :always_reset      => _conf['reset_db_on_provision'],
+        :dbhost            => _conf['db_host'],
+        :dbprefix          => _conf['db_prefix'],
+        :options           => _conf['options'],
+        :rewrite_structure => _conf['rewrite_structure']
+      },
+      :vccw => {
+        :version           => vccw_version,
+        :user              => _conf['user'],
+        :group              => _conf['group'],
+        :wordmove => {
+          :movefile        => File.join('/vagrant', 'Movefile'),
+          :url             => 'http://' << File.join(_conf['hostname'], _conf['wp_home']),
+          :wpdir           => File.join(_conf['document_root'], _conf['wp_siteurl']),
+          :dbhost          => _conf['db_host']
         },
-        # Include the list of themes you'd like installed
-        'org_themes' => {
-          #'Toolbox' => {},
-          #'Pagelines' => {
-          #  'path' => 'pagelines',
-          #  'tag' => '1.1.3'
-          #}
-        },
-        'version' => 'latest'
+        :phpenv => {
+          :php_version     => _conf['php_version']
+        }
+      },
+      :rbenv => {
+        'rubies'  => ['2.1.2'],
+        'global'  => '2.1.2',
+        'gems'    => {
+          '2.1.2' => [
+            {
+              name: 'bundler',
+              options: '--no-ri --no-rdoc'
+            },
+            {
+              name: 'sass',
+              options: '--no-ri --no-rdoc'
+            },
+            {
+              name: 'wordmove',
+              options: '--no-ri --no-rdoc'
+            },
+            {
+              name: 'mailcatcher',
+              options: '--no-ri --no-rdoc'
+            }
+          ]
+        }
       }
     }
 
+    chef.add_recipe 'wpcli'
+    chef.add_recipe 'wpcli::install'
+    if true != _conf['disable_vccw_cookbook']
+      chef.add_recipe 'vccw'
+    end
+
   end
 
-  # Enable provisioning with chef server, specifying the chef server URL,
-  # and the path to the validation key (relative to this Vagrantfile).
-  #
-  # The Opscode Platform uses HTTPS. Substitute your organization for
-  # ORGNAME in the URL and validation key.
-  #
-  # If you have your own Chef Server, use the appropriate URL, which may be
-  # HTTP instead of HTTPS depending on your configuration. Also change the
-  # validation key to validation.pem.
-  #
-  # config.vm.provision :chef_client do |chef|
-  #   chef.chef_server_url = "https://api.opscode.com/organizations/ORGNAME"
-  #   chef.validation_key_path = "ORGNAME-validator.pem"
-  # end
-  #
-  # If you're using the Opscode platform, your validator client is
-  # ORGNAME-validator, replacing ORGNAME with your organization name.
-  #
-  # IF you have your own Chef Server, the default validation client name is
-  # chef-validator, unless you changed the configuration.
-  #
-  #   chef.validation_client_name = "ORGNAME-validator"
+  if File.exists?(File.join(File.dirname(__FILE__), 'provision-post.sh')) then
+    config.vm.provision :shell, :path => File.join( File.dirname(__FILE__), 'provision-post.sh' )
+  end
 end

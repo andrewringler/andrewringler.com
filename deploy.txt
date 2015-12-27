@@ -1,3 +1,6 @@
+v0.5
+- changed to http://vccw.cc for Vagrant configuration
+
 v0.4
 - update tagline to 'Programmer & Artist'
 - added post thumbnails, make sure featured image is set on all posts
