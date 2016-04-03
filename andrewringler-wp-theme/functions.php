@@ -4,6 +4,7 @@
  *
  * @package Andrew Profile Theme 2013
  */
+$VERSION = '0.5.1';
 
 /**
  * Set the content width based on the theme's design and stylesheet.
@@ -106,7 +107,9 @@ add_action( 'widgets_init', 'andrewringler_profile_2013_widgets_init' );
  * Enqueue scripts and styles
  */
 function andrewringler_profile_2013_scripts() {
-	wp_enqueue_style( 'andrewringler_profile_2013-style', get_stylesheet_uri() );
+	global $VERSION;
+
+	wp_enqueue_style( 'andrewringler_profile_2013-style', get_stylesheet_uri(), $VERSION);
 
 	wp_enqueue_script( 'andrewringler_profile_2013-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 

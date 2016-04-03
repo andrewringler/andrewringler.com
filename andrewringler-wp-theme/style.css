@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Andrew Ringler
 Author URI: http://andrewringler.com
 Description: Theme for andrewringler.com
-Version: 0.5
+Version: 0.5.1
 License: GNU General Public License
 License URI: license.txt
 Tags:
@@ -571,7 +571,9 @@ nav li a:active {
 	font-weight: 800 !important;
 	text-transform: lowercase;
 	font-size: 0.8em;
-	margin-right: 0.5em;
+}
+.article-link {
+	margin-left: 0.5em;
 }
 .entry-content, p, li {
 	max-width: 40em;
