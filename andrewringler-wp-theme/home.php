@@ -35,6 +35,7 @@ get_header(); ?>
           <?php
           /* translators: used between list items, there is a space after the comma */
           $categories_list = get_the_category_list( __( ', ', 'andrewringler_profile_2013' ) );
+					
           if ( $categories_list && andrewringler_profile_2013_categorized_blog() ) :
             ?>
             <span class="cat-links">

@@ -50,7 +50,7 @@ function andrewringler_profile_2013_setup() {
 	 * This theme uses wp_nav_menu() in one location.
 	 */
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'andrewringler_profile_2013' ),
+		'primary' => __( 'Primary', 'andrewringler_profile_2013' ),
 	) );
 
 	/**

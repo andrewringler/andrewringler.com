@@ -31,36 +31,16 @@
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
 	<header id="masthead" class="site-header" role="banner">
-    <nav id="site-navigation" class="navigation-main visually-hidden" role="navigation">
-       <h1 class="menu-toggle"><?php _e( 'Menu', 'andrewringler_profile_2013' ); ?></h1>
+    <div>
+       <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" id="blogname-container">
+         <h1 id="blogname"><?php bloginfo( 'name' ); ?></h1>
+       </a>
+    </div>
+    <nav id="site-navigation" class="nav navigation-main" role="navigation">
        <div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'andrewringler_profile_2013' ); ?>"><?php _e( 'Skip to content', 'andrewringler_profile_2013' ); ?></a></div>
 
        <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-     </nav><!-- #site-navigation -->
-
-     <div>
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" id="blogname-container">
-          <h1 id="blogname"><?php bloginfo( 'name' ); ?></h1>
-        </a>
-			</div>
-     </div>
-     <nav>
-       <ul class="nav">
-         <li><a href="https://andrewringler.com/about">About</a></li>
-         <li><a href="https://andrewringler.com/category/code/">Code</a></li>
-         <li><a href="https://andrewringler.com/category/film/">Film</a></li>
-         <li><a href="https://andrewringler.com/category/writing/">Writing</a></li>
-       </ul>
-     </nav>
-     
-
+    </nav>
 	</header>
-	<!-- #masthead -->
-
-
-
-
-
-
 
 	<div id="main" class="site-main">
