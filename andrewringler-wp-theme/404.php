@@ -16,9 +16,11 @@ get_header(); ?>
 				</header><!-- .entry-header -->
 
 				<div class="entry-content">
-					<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'andrewringler_profile_2013' ); ?></p>
-
-					<?php get_search_form(); ?>
+					<p><?php _e( 'Maybe try one of the links below or a search?', 'andrewringler_profile_2013' ); ?></p>
+					
+					<p>
+						<?php get_search_form(); ?>						
+					</p>
 
 					<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
 

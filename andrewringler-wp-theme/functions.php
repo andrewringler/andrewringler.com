@@ -1,10 +1,14 @@
 <?php
+
+// https://codex.wordpress.org/Function_Reference/flush_rewrite_rules
+flush_rewrite_rules(true);
+
 /**
- * Andrew Profile Theme 2013 functions and definitions
+ * Andrew Ringler 2016 functions and definitions
  *
- * @package Andrew Profile Theme 2013
+ * @package Andrew Ringler 2016
  */
-$VERSION = '0.5.1';
+$VERSION = '0.5.2';
 
 /**
  * Set the content width based on the theme's design and stylesheet.
