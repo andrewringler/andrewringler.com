@@ -421,7 +421,6 @@ a:active {
 	position: relative;
 }
 .navigation-main a {
-	display: block;
 	text-decoration: none;
 }
 .navigation-main ul li:hover > ul {
@@ -716,8 +715,43 @@ h1, h2, h3, p, li, span, time {
 
 
 /* =Responsive Breakpoints
- * not mobile-first
+ * not all mobile-first
 ----------------------------------------------- */
+@media only screen and (min-width: 30em) {
+	.navigation-main .sub-menu {
+		float: right;
+		font-size: 1em;
+		margin-left: 0.2em;
+	}
+	.navigation-main .sub-menu:before {
+		content: "(";
+		float: left;
+		color: steelblue;
+	}
+	.navigation-main .sub-menu:after {
+		content: ")";
+		float: right;
+		color: steelblue;
+	}
+	.navigation-main .sub-menu .menu-item {
+		float: left;
+		margin: 0; padding: 0;
+	}
+	.navigation-main .sub-menu .menu-item a {
+		margin: 0; padding: 0;
+	}
+	.navigation-main .sub-menu .menu-item a:before {
+		content: "";
+	}
+	.navigation-main .sub-menu .menu-item a:after {
+		content: ",";
+	}
+	.navigation-main .sub-menu .menu-item:last-child a:after {
+		content: "";
+	}
+
+}
+
 @media only screen and (max-width: 990px) {
 	#content {
 	  max-width: 95%;
