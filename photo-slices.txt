@@ -10,7 +10,10 @@ sort of like visual sparklines
 Then on commandline use imagemagick
 to first cut up the image into individual images (slice it up)
 
-convert night_cones.png -crop 15x3-0-0@ +repage +adjoin tile-%d.png
+convert src.png -crop 15x3-0-0@ +repage +adjoin tile-%d.png
 
 Then, rejoin the image into a single "sparkline"
-montage tile-*.png -tile 45x1 -geometry 20x20+0+0 night_cones_sparkline.png
+montage tile-*.png -tile 45x1 -geometry 20x20+0+0 src_sparkline.png
+
+Then rescale to 10px high
+then save as JPG
