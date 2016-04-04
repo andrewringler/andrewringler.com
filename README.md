@@ -9,9 +9,11 @@ Contact me at [public@andrewringler.com](mailto:public@andrewringler.com "public
 
 `vagrant up`
 
-* visit http://192.168.33.10/ and http://192.168.33.10/wp-admin/, user: admin, pass: admin
-* delete default posts and pages
+* add to hosts file:
+`192.168.33.10	andrewringler`
 
+* visit http://andrewringler and http://andrewringler/wp-admin/, user: admin, pass: admin
+* delete default posts and pages
 
 ### Import Db from andrewringler.com
 First export Wordpress content from andrewringler.com to exports then:
@@ -23,13 +25,9 @@ First export Wordpress content from andrewringler.com to exports then:
     wp plugin deactivate WordPress-Importer-master
 
 ### Activate Theme
-* activate 'Andrew Ringler 2015' theme
-* setup menus and widgets
+* activate 'Andrew Ringler 2016' theme
+* setup primary menu
 
-    
-## TODO
-
-
-* post thumbnails    
-* Should look over h5bp .htaccess file, decide what features I want to pull into andrewringler.com
-* static.andrewringler.com for serving up image assets
+### Settings
+* change Settings > Reading > "Blog pages show at most" to 500
+* change Settings > General > Site Tile to "Andrew Ringler"

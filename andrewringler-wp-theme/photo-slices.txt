@@ -1,0 +1,16 @@
+* Creating photo slices for homepage
+sort of like visual sparklines
+
+- First, grab a nice image
+  crop a nice section out of it
+- then rescale to 300px high
+	then crop so it is 300 x 60
+	IE multiples of 20px
+	
+Then on commandline use imagemagick
+to first cut up the image into individual images (slice it up)
+
+convert night_cones.png -crop 15x3-0-0@ +repage +adjoin tile-%d.png
+
+Then, rejoin the image into a single "sparkline"
+montage tile-*.png -tile 45x1 -geometry 20x20+0+0 night_cones_sparkline.png
