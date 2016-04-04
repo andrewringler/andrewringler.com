@@ -46,6 +46,30 @@ get_header(); ?>
           <a class="article-link" href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
             <?php the_title(); ?>
           </a>
+					
+					<?php
+						/* show featured image if available
+						 * it shold be a 10px tall sparkline */
+						if (has_post_thumbnail())
+						{
+								$thumb_id = get_post_thumbnail_id();
+								$thumb_attr = wp_get_attachment_image_src($thumb_id,'full', true);
+								$thumb_url = $thumb_attr[0];
+								$thumb_width = $thumb_attr[1];
+								$thumb_height = $thumb_attr[2];
+								
+								if($thumb_height == 10){
+									// adapted from wp-content/media.php
+									$alt_text = trim(strip_tags( get_post_meta($thumb_id, '_wp_attachment_image_alt', true)));
+								?>
+								<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+									<img src="<?php echo $thumb_url; ?>" class="homepage-sparkline-image" alt="<?php echo $alt_text; ?>" />								
+								</a>								
+								<?php									
+							}
+						}
+					?>
+					
         </li>
       <?php endwhile; ?>
     </ul>

@@ -120,7 +120,6 @@ body {
   color: #333;
 	padding-left: 1em;
   margin: 0.5em 2em 1em 2em;
-  max-width: 850px;
 }
 
 /* Headings */
@@ -431,19 +430,15 @@ a:active {
 .navigation-main .sub-menu {
 	text-transform: lowercase;
 	font-weight: normal;
-	font-size: 0.9em;
+	font-size: 0.8em;
 }
 .navigation-main .sub-menu .menu-item {
 	margin: 0; padding: 0;
 	display: list-item;
 	float: none;
 	position: static;
-	margin-left: 0.25em;
-}
-.navigation-main .sub-menu .menu-item a:before {
-	content: "- ";
-	color: steelblue;
-	opacity: 0.5;
+	margin-left: 0;
+	text-decoration: underline;
 }
 
 
@@ -538,7 +533,7 @@ nav li a:active {
 .home-post-title { font-weight: 300; position: relative; padding-left: 5em; }
 .home-post-title a { font-weight: 300; }
 .home-post-date { position: absolute; left: 0; top: 0.3em; font-weight: 800; font-size: 0.8em; color: #444; }
-#abstract { font-size: 1.2em; margin-bottom: 4em; font-weight: 300; font-style: italic; }
+#abstract { font-size: 1em; margin-bottom: 3em; font-weight: 300; font-style: italic; }
 .cat-links a, .cat-links a:visited {
 	font-weight: 800 !important;
 	text-transform: lowercase;
@@ -718,6 +713,7 @@ h1, h2, h3, p, li, span, time {
  * not all mobile-first
 ----------------------------------------------- */
 @media only screen and (min-width: 30em) {
+	/* if large enough show menus fully horizontally */
 	.navigation-main .sub-menu {
 		float: right;
 		font-size: 1em;
@@ -749,7 +745,18 @@ h1, h2, h3, p, li, span, time {
 	.navigation-main .sub-menu .menu-item:last-child a:after {
 		content: "";
 	}
+}
 
+@media only screen and (min-width: 1000px) {
+	/* show featured image sparkline horizontally */
+	.homepage-sparkline-image {
+		display: inline; position: static;
+		margin-left: 4px;
+		vertical-align: center;
+	}
+	.home-post-title {
+		min-width: 100%;
+	}
 }
 
 @media only screen and (max-width: 990px) {
