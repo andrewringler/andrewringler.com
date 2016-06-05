@@ -46,6 +46,26 @@ function andrewringler_profile_2013_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
+	// fixed-height images for home-page, CSS size is ###x200
+	// larger sizes are for srcset and sizes responsive images
+	add_image_size('home-200x200',9999,200,false);
+	add_image_size('home-400x400',9999,400,false);
+	add_image_size('home-800x800',9999,800,false);
+	add_image_size('home-1000x1000',9999,1000,false);	
+
+	// post images, non-square
+	add_image_size('post-image-150w',150,9999,false);
+	add_image_size('post-image-300w',300,9999,false);
+	add_image_size('post-image-600w',600,9999,false);
+	add_image_size('post-image-1200w',1200,9999,false);
+
+	/* 
+	 * Increase JPEG compression
+	 * since we have some large file resolutions, set JPEG compression
+	 * to 80, this only applies to thumbnails, not original images uploaded
+	 */
+	add_filter('jpeg_quality', create_function( '', 'return 80;' ));
+
 	/**
 	 * This theme uses wp_nav_menu() in one location.
 	 */
@@ -159,3 +179,114 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+
+
+
+
+
+
+/* Advanced Custom Fields
+ * https://www.advancedcustomfields.com
+ * https://www.advancedcustomfields.com/resources/including-acf-in-a-plugin-theme/
+ */
+//  // 1. customize ACF path
+// add_filter('acf/settings/path', 'my_acf_settings_path');
+// function my_acf_settings_path( $path ) { 
+//     $path = get_stylesheet_directory() . '/acf/';    
+//     return $path;    
+// }
+//  
+// // 2. customize ACF dir
+// add_filter('acf/settings/dir', 'my_acf_settings_dir');
+// function my_acf_settings_dir( $dir ) {
+//     $dir = get_stylesheet_directory_uri() . '/acf/';    
+//     return $dir;    
+// }
+//  
+// // 3. Hide ACF field group menu item
+// add_filter('acf/settings/show_admin', '__return_false');
+// 
+// // 4. Include ACF
+// include_once( get_stylesheet_directory() . '/acf/acf.php' );
+
+ 
+if(function_exists("register_field_group"))
+{
+	register_field_group(array (
+		'id' => 'acf_home-page',
+		'title' => 'Home Page',
+		'fields' => array (
+			array (
+				'key' => 'field_57517a994fd46',
+				'label' => 'Square Image',
+				'name' => 'homepage_squareimage',
+				'type' => 'image',
+				'instructions' => 'Should be a square image with a high resolution',
+				'save_format' => 'object',
+				'preview_size' => 'thumbnail',
+				'library' => 'all',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'post',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'no_box',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
+}
+
+if(function_exists("register_field_group"))
+{
+	register_field_group(array (
+		'id' => 'acf_okhome',
+		'title' => 'OKHome',
+		'fields' => array (
+			array (
+				'key' => 'field_575197c7aee86',
+				'label' => 'Short Title',
+				'name' => 'home_shorttitle',
+				'type' => 'text',
+				'instructions' => 'A short title for display on the homepage',
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'post',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'no_box',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
+}

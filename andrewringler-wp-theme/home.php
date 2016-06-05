@@ -9,73 +9,42 @@ get_header(); ?>
 
 <div id="primary" class="content-area">
 	<div id="content" class="site-content" role="main">
-    <p id="abstract">I am a Boston based professional software developer and artist. I bring together performance, comedy, filmmaking, visual arts, and code to create engaging experiences.</p>
+    <div id="abstract">
+			<p>I am based in Boston. I create interactive public installations that allow participants to create their own novel visual and auditory experiences. I challenge participants to invest time and effort learning new systems collaboratively, and through that investment receive the pride of achievement, and the joy of connecting with others.</p>
+			<p>
+				Selected entries:
+			</p>
+		</div>
 
-    <?php if ( have_posts() ) : ?>
+    <?php 
+		query_posts('tag=gallery,public');
+		if (have_posts()) :
+			?> <div class="home-section">				
+			<h2 class="home-category">Public and Gallery</h2> <?php
+			get_template_part('template-parts/content', 'home');
+			?> </div> <?php
+		endif;
+		wp_reset_query(); 
 
-      <?php if ( is_home() && ! is_front_page() ) : ?>
-        <header>
-          <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-        </header>
-      <?php endif; ?>
-
-      <ul>
-        <?php while ( have_posts() ) : the_post();
-
-        /*
-        * Include the Post-Format-specific template for the content.
-        * If you want to override this in a child theme, then include a file
-        * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-        */
-        //get_template_part( 'content', get_post_format() );
-        ?>
-        <li class="home-post-title">
-          <span class="home-post-date"><?php the_time('Y M') ?></span>
-
-          <?php
-          /* translators: used between list items, there is a space after the comma */
-          $categories_list = get_the_category_list( __( ', ', 'andrewringler_profile_2013' ) );
-					
-          if ( $categories_list && andrewringler_profile_2013_categorized_blog() ) :
-            ?>
-            <span class="cat-links">
-              <?php printf( __( '%1$s', 'andrewringler_profile_2013' ), $categories_list ); ?>
-            </span>
-          <?php endif; // End if categories ?>
-
-          <a class="article-link" href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-            <?php the_title(); ?>
-          </a>
-					
-					<?php
-						/* show featured image if available
-						 * it shold be a 10px tall sparkline */
-						if (has_post_thumbnail())
-						{
-								$thumb_id = get_post_thumbnail_id();
-								$thumb_attr = wp_get_attachment_image_src($thumb_id,'full', true);
-								$thumb_url = $thumb_attr[0];
-								$thumb_width = $thumb_attr[1];
-								$thumb_height = $thumb_attr[2];
-								
-								if($thumb_height == 10){
-									// adapted from wp-content/media.php
-									$alt_text = trim(strip_tags( get_post_meta($thumb_id, '_wp_attachment_image_alt', true)));
-								?>
-								<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-									<img src="<?php echo $thumb_url; ?>" class="homepage-sparkline-image" alt="<?php echo $alt_text; ?>" />								
-								</a>								
-								<?php									
-							}
-						}
-					?>
-					
-        </li>
-      <?php endwhile; ?>
-    </ul>
-  <?php endif; ?>
-
-
+		query_posts('tag=conceptual');
+		if (have_posts()) :
+			?> <div class="home-section">				
+					<h2 class="home-category">Conceptual</h2> <?php
+			get_template_part('template-parts/content', 'home');
+			?> </div> <?php
+		endif;
+		wp_reset_query(); 
+		
+		query_posts('tag=teaching');
+		if (have_posts()) :
+			?> <div class="home-section">				
+			<h2 class="home-category">Teaching</h2> <?php
+			get_template_part('template-parts/content', 'home');
+			?> </div> <?php
+		endif;
+		wp_reset_query(); 		
+		
+		?>
 
 		</div><!-- #content -->
 	</div><!-- #primary -->

@@ -31,3 +31,7 @@ First export Wordpress content from andrewringler.com to exports then:
 ### Settings
 * change Settings > Reading > "Blog pages show at most" to 500
 * change Settings > General > Site Tile to "Andrew Ringler"
+
+### Plugins
+* Advanced Custom Fields
+* Force Regenerate Thumbnails

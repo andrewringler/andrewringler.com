@@ -1,6 +1,6 @@
 <?php
 /**
- * Homepage
+ * Entries list
  *
  * @package Andrew Profile Theme 2013
  */
@@ -16,7 +16,7 @@ get_header(); ?>
 		if ( have_posts() ) : ?>
 
       <header>
-        <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+        <h1 class="page-title screen-reader-text">Entries</h1>
       </header>
 
       <ul>
@@ -29,8 +29,8 @@ get_header(); ?>
         */
         //get_template_part( 'content', get_post_format() );
         ?>
-        <li class="home-post-title">
-          <span class="home-post-date"><?php the_time('Y M') ?></span>
+        <li class="entries-post-title">
+          <span class="entries-post-date"><?php the_time('Y M') ?></span>
 
           <?php
           /* translators: used between list items, there is a space after the comma */

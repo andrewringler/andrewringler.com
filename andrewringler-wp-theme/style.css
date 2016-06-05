@@ -482,8 +482,12 @@ footer {
 
 
 
-/* =Home Page
+/* =Entries / text page
 ----------------------------------------------- */
+
+
+
+
 body.home #profile-header {
   position: relative;
   padding-left: 520px;
@@ -530,16 +534,51 @@ nav li a:focus,
 nav li a:active {
 	text-decoration: none;
 }
-.home-post-title { font-weight: 300; position: relative; padding-left: 5em; }
-.home-post-title a { font-weight: 300; }
-.home-post-date { position: absolute; left: 0; top: 0.3em; font-weight: 800; font-size: 0.8em; color: #444; }
+
+.home-section {
+	margin-bottom: 2em;
+	float: left;
+	clear: left;
+}
+
+.home-post-title {
+	position: relative;
+}
+li.home-post-title {
+	display: block;
+	float: left;
+	margin: 0; padding: 0;
+	max-width: 100%;
+	line-height: 0; /* resolves auto-height issues with image contained within */
+}
+.home-post-title a.article-link {
+	position: absolute;
+	bottom: 0.25em;
+	left: 0;
+	line-height: 1.2em;
+	
+	padding: 0 8px 0 8px;
+	
+	color: white;
+	background-color: black;
+	background-color: rgba(0, 0, 0, 0.7);
+	
+	font-weight: normal;
+	font-style: italic;
+	font-size: 0.9em;
+}
+
+
+.entries-post-title { font-weight: 300; position: relative; padding-left: 5em; }
+.entries-post-title a { font-weight: 300; }
+.entries-post-date { position: absolute; left: 0; top: 0.3em; font-weight: 800; font-size: 0.8em; color: #444; }
 #abstract { font-size: 1em; margin-bottom: 3em; font-weight: 300; font-style: italic; }
 .cat-links a, .cat-links a:visited {
 	font-weight: 800 !important;
 	text-transform: lowercase;
 	font-size: 0.8em;
 }
-.article-link {
+.entries-post-title .article-link {
 	margin-left: 0.5em;
 }
 .entry-content, p, li {
@@ -751,7 +790,7 @@ h1, h2, h3, p, li, span, time {
 		margin-left: 4px;
 		vertical-align: center;
 	}
-	.home-post-title {
+	.entries-post-title {
 		min-width: 100%;
 	}
 }
