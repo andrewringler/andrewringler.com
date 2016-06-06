@@ -20,7 +20,7 @@ get_header(); ?>
 		query_posts('tag=gallery,public');
 		if (have_posts()) :
 			?> <div class="home-section">				
-			<h2 class="home-category">Public and Gallery</h2> <?php
+			<h2 class="home-category">Public / Gallery</h2> <?php
 			get_template_part('template-parts/content', 'home');
 			?> </div> <?php
 		endif;
@@ -29,7 +29,7 @@ get_header(); ?>
 		query_posts('tag=conceptual');
 		if (have_posts()) :
 			?> <div class="home-section">				
-					<h2 class="home-category">Conceptual and Personal</h2> <?php
+					<h2 class="home-category">Conceptual / Personal</h2> <?php
 			get_template_part('template-parts/content', 'home');
 			?> </div> <?php
 		endif;
@@ -38,7 +38,7 @@ get_header(); ?>
 		query_posts('tag=teaching');
 		if (have_posts()) :
 			?> <div class="home-section">				
-			<h2 class="home-category">Teaching</h2> <?php
+			<h2 class="home-category">Teaching / Student Work</h2> <?php
 			get_template_part('template-parts/content', 'home');
 			?> </div> <?php
 		endif;
