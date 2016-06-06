@@ -482,12 +482,8 @@ footer {
 
 
 
-/* =Entries / text page
+/* =Homepage / projects / images
 ----------------------------------------------- */
-
-
-
-
 body.home #profile-header {
   position: relative;
   padding-left: 520px;
@@ -569,6 +565,10 @@ li.home-post-title {
 }
 
 
+
+
+/* =Entries / text page
+----------------------------------------------- */
 .entries-post-title { font-weight: 300; position: relative; padding-left: 5em; }
 .entries-post-title a { font-weight: 300; }
 .entries-post-date { position: absolute; left: 0; top: 0.3em; font-weight: 800; font-size: 0.8em; color: #444; }
@@ -750,6 +750,11 @@ h1, h2, h3, p, li, span, time {
 ----------------------------------------------- */
 @media only screen and (min-width: 30em) {
 	/* if large enough show menus fully horizontally */
+	.homepage-entry-image img {
+		height: 200px;
+		min-width: inherit;
+		width: auto;
+	}	
 	.navigation-main .sub-menu {
 		float: right;
 		font-size: 1em;
