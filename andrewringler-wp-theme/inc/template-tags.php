@@ -163,14 +163,21 @@ if ( ! function_exists( 'andrewringler_profile_2013_posted_on' ) ) :
  * Prints HTML with meta information for the current post-date/time and author.
  */
 function andrewringler_profile_2013_posted_on() {
-	printf( __( '<time class="entry-date" datetime="%3$s">%4$s</time><span class="byline"> by <span class="author vcard">%7$s</span></span>', 'andrewringler_profile_2013' ),
+	// printf( __( '<time class="entry-date" datetime="%3$s">%4$s</time><span class="byline"> by <span class="author vcard">%7$s</span></span>', 'andrewringler_profile_2013' ),
+	// 	esc_url( get_permalink() ),
+	// 	esc_attr( get_the_time() ),
+	// 	esc_attr( get_the_date( 'c' ) ),
+	// 	esc_html( get_the_date() ),
+	// 	esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+	// 	esc_attr( sprintf( __( 'View all posts by %s', 'andrewringler_profile_2013' ), get_the_author() ) ),
+	// 	get_the_author()
+	// );
+	
+	printf( __( '<time class="entry-date" datetime="%3$s">%4$s</time>', 'andrewringler_profile_2013' ),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
-		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		esc_attr( sprintf( __( 'View all posts by %s', 'andrewringler_profile_2013' ), get_the_author() ) ),
-		get_the_author()
+		esc_html( get_the_date() )
 	);
 }
 endif;
