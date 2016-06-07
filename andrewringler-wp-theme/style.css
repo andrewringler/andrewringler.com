@@ -544,7 +544,7 @@ li.home-post-title {
 	display: block;
 	float: left;
 	margin: 0; padding: 0;
-	max-width: 100%;
+	max-width: 100%;	
 	line-height: 0; /* resolves auto-height issues with image contained within */
 }
 .home-post-title a.article-link {
@@ -751,7 +751,7 @@ h1, h2, h3, p, li, span, time {
 @media only screen and (min-width: 30em) {
 	/* if large enough show menus fully horizontally */
 	.homepage-entry-image img {
-		height: 200px;
+		height: 150px;
 		min-width: inherit;
 		width: auto;
 	}	
