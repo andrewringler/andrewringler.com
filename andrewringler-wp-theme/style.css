@@ -563,6 +563,59 @@ li.home-post-title {
 	font-style: italic;
 	font-size: 0.9em;
 }
+.homepage-entry-image:hover ~ a.article-link,
+a.article-link:hover {
+	text-decoration: none;
+	background-color: white;
+	color: black;
+	font-style: italic;
+	font-weight: 800;
+}
+.homepage-entry-image:hover {
+	-webkit-filter: brightness(1.1) contrast(1.1) saturate(1.8);
+	filter: brightness(1.4);
+}
+
+/*.home-post-sequencing .homepage-entry-image:hover ~ a.article-link,
+.home-post-sequencing a.article-link:hover {
+	background-color: rgb(209,170,251);
+	color: black;
+}
+.home-post-macropavilion-panama .homepage-entry-image:hover ~ a.article-link,
+.home-post-macropavilion-panama a.article-link:hover {
+	background-color: rgb(168,104,216);
+	color: black;
+}
+.home-post-draw-blocks .homepage-entry-image:hover ~ a.article-link,
+.home-post-draw-blocks a.article-link:hover {
+	background-color: rgb(47,99,93);
+	color: white;
+}
+.home-post-tinyvacay .homepage-entry-image:hover ~ a.article-link,
+.home-post-tinyvacay a.article-link:hover {
+	background-color: rgb(246,225,144);
+	color: black;
+}
+.home-post-dmi-thesis .homepage-entry-image:hover ~ a.article-link,
+.home-post-dmi-thesis a.article-link:hover {
+	background-color: rgb(118,248,250);
+	color: black;
+}
+.home-post-tangible-programming .homepage-entry-image:hover ~ a.article-link,
+.home-post-tangible-programming  a.article-link:hover {
+	background-color: black;
+	color: rgb(107,131,173);	
+}
+.home-post-collaborative-design-with-arduino .homepage-entry-image:hover ~ a.article-link,
+.home-post-collaborative-design-with-arduino a.article-link:hover {
+	background-color: rgb(85,92,251);
+	color: rgb(214,229,249);
+}
+.home-post-how-different-software-languages-libraries-affect-your-creative-process .homepage-entry-image:hover ~ a.article-link,
+.home-post-how-different-software-languages-libraries-affect-your-creative-process a.article-link:hover {
+	background-color: rgb(109,31,37);
+	color: rgb(215,202,54);
+}*/
 
 
 

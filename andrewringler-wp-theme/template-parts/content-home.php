@@ -17,7 +17,7 @@
 	*/
 	//get_template_part( 'content', get_post_format() );
 	?>
-	<li class="home-post-title">										
+	<li class="home-post-title <?php echo "home-post-$post->post_name"; ?>">										
 		<?php
 		$image = get_field('homepage_squareimage');
 		if(!empty($image)):
@@ -37,11 +37,9 @@
 			$alt_text = trim(strip_tags(get_post_meta($img_id, '_wp_attachment_image_alt', true)));
 			
 			?>
-			<div class="homepage-entry-image">
-				<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-					<img src="<?php echo $img_url[0]; ?>" alt="<?php echo $alt_text; ?>" srcset="<?php echo $srcset; ?>" sizes="((max-width: 10000px) and (max-height: 10000px)) <?php echo $width; ?>, <?php echo $width; ?>" />							
-				</a>								
-			</div>
+		<a class="homepage-entry-image" href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+			<img src="<?php echo $img_url[0]; ?>" alt="<?php echo $alt_text; ?>" srcset="<?php echo $srcset; ?>" sizes="((max-width: 10000px) and (max-height: 10000px)) <?php echo $width; ?>, <?php echo $width; ?>" />							
+		</a>								
 		
 		<?php endif; ?>
 		
