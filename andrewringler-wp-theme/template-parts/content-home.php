@@ -37,22 +37,24 @@
 			$alt_text = trim(strip_tags(get_post_meta($img_id, '_wp_attachment_image_alt', true)));
 			
 			?>
-		<a class="homepage-entry-image" href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-			<img src="<?php echo $img_url[0]; ?>" alt="<?php echo $alt_text; ?>" srcset="<?php echo $srcset; ?>" sizes="((max-width: 10000px) and (max-height: 10000px)) <?php echo $width; ?>, <?php echo $width; ?>" />							
+		<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+			<img class="homepage-entry-image" src="<?php echo $img_url[0]; ?>" alt="<?php echo $alt_text; ?>" srcset="<?php echo $srcset; ?>" sizes="((max-width: 10000px) and (max-height: 10000px)) <?php echo $width; ?>, <?php echo $width; ?>" />							
+			
+			<span class="article-link">
+				<?php 
+					$title = get_field('home_shorttitle');
+					if($title){
+						echo $title;
+					}else{
+						the_title(); 					
+					}
+				?>
+
+			</span>
 		</a>								
 		
 		<?php endif; ?>
 		
-		<a class="article-link" href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-			<?php 
-				$title = get_field('home_shorttitle');
-				if($title){
-					echo $title;
-				}else{
-					the_title(); 					
-				}
-			?>
-		</a>
 
 	</li>
 <?php endwhile; ?>

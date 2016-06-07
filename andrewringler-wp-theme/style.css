@@ -547,7 +547,7 @@ li.home-post-title {
 	max-width: 100%;	
 	line-height: 0; /* resolves auto-height issues with image contained within */
 }
-.home-post-title a.article-link {
+.home-post-title .article-link {
 	position: absolute;
 	bottom: 0.25em;
 	left: 0;
@@ -563,17 +563,19 @@ li.home-post-title {
 	font-style: italic;
 	font-size: 0.9em;
 }
-.homepage-entry-image:hover ~ a.article-link,
-a.article-link:hover {
+.home-post-title a:hover .article-link {
 	text-decoration: none;
 	background-color: white;
 	color: black;
 	font-style: italic;
 	font-weight: 800;
+	text-shadow: none;
+	border: none;
+	box-shadow: none;
 }
-.homepage-entry-image:hover {
-	-webkit-filter: brightness(1.1) contrast(1.1) saturate(1.8);
-	filter: brightness(1.4);
+.home-post-title a:hover img {
+	-webkit-filter: brightness(1.2);
+	filter: brightness(1.2);
 }
 
 /*.home-post-sequencing .homepage-entry-image:hover ~ a.article-link,
@@ -803,7 +805,7 @@ h1, h2, h3, p, li, span, time {
 ----------------------------------------------- */
 @media only screen and (min-width: 30em) {
 	/* if large enough show menus fully horizontally */
-	.homepage-entry-image img {
+	.homepage-entry-image {
 		height: 150px;
 		min-width: inherit;
 		width: auto;
