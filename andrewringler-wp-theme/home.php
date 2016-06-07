@@ -12,7 +12,7 @@ get_header(); ?>
     <div id="abstract">
 			<p>I create interactive public installations that allow participants to create their own novel visual and auditory experiences. I challenge participants to invest time and effort learning new systems collaboratively, and through that investment receive the pride of achievement, and the joy of connecting with others. I am based in Boston. <a href="/about">more about me…</a></p>
 			<p>
-				Selected entries:
+				Selected site entries by category and image:
 			</p>
 		</div>
 
