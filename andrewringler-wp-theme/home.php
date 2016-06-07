@@ -10,7 +10,7 @@ get_header(); ?>
 <div id="primary" class="content-area">
 	<div id="content" class="site-content" role="main">
     <div id="abstract">
-			<p>I am based in Boston. I create interactive public installations that allow participants to create their own novel visual and auditory experiences. I challenge participants to invest time and effort learning new systems collaboratively, and through that investment receive the pride of achievement, and the joy of connecting with others.</p>
+			<p>I create interactive public installations that allow participants to create their own novel visual and auditory experiences. I challenge participants to invest time and effort learning new systems collaboratively, and through that investment receive the pride of achievement, and the joy of connecting with others. I am based in Boston. <a href="/about">more about me…</a></p>
 			<p>
 				Selected entries:
 			</p>

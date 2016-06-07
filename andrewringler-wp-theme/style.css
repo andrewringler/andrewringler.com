@@ -338,6 +338,10 @@ a:active {
 	text-shadow: 0 0 0.2em rgba(150,150,255,0.2), 0 0 0.2em rgba(150,150,255,0.2), 0 0 0.2em rgba(150,150,255,0.2);
 	text-decoration: underline;
 }
+.current-menu-item > a {
+	text-shadow: 0 0 0.5em rgba(150,150,255,0.3), 0 0 0.5em rgba(150,150,255,0.3), 0 0 0.5em rgba(150,150,255,0.3);
+	font-weight: 800;
+}
 
 /* Alignment */
 .alignleft {
