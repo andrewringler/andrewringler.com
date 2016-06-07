@@ -6,7 +6,13 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+		<h1 class="entry-title">
+			<?php if (is_single()) : ?>
+			<?php the_title(); ?>
+			<?php else: ?>
+			<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
+			<?php endif; ?>
+		</h1>
 
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
@@ -39,7 +45,7 @@
 				if ( $categories_list && andrewringler_profile_2013_categorized_blog() ) :
 			?>
 			<span class="cat-links">
-				<?php printf( __( 'Posted in %1$s', 'andrewringler_profile_2013' ), $categories_list ); ?>
+				<?php printf( __( '%1$s', 'andrewringler_profile_2013' ), $categories_list ); ?>
 			</span>
 			<?php endif; // End if categories ?>
 
@@ -49,8 +55,8 @@
 				if ( $tags_list ) :
 			?>
 			<span class="sep"> | </span>
-			<span class="tags-links">
-				<?php printf( __( 'Tagged %1$s', 'andrewringler_profile_2013' ), $tags_list ); ?>
+			<span class="cat-links">
+				<?php printf( __( '%1$s', 'andrewringler_profile_2013' ), $tags_list ); ?>
 			</span>
 			<?php endif; // End if $tags_list ?>
 		<?php endif; // End if 'post' == get_post_type() ?>

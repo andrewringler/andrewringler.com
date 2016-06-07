@@ -8,7 +8,7 @@ flush_rewrite_rules(true);
  *
  * @package Andrew Ringler 2016
  */
-$VERSION = '0.5.4';
+$VERSION = '0.5.5';
 
 /**
  * Set the content width based on the theme's design and stylesheet.

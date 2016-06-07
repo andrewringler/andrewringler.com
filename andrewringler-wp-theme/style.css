@@ -133,7 +133,7 @@ h1 {
 	font-size: 1.5em;
 	line-height: 2em;
 }
-h3 {
+h3, body.archive .entry-header h1 {
 	font-size: 1.1em;
 	line-height: 1.5;
 
@@ -469,6 +469,9 @@ body.home #content {
 .entry-summary {
 	margin: 1.5em 0 0;
 }
+.entry-content p:last-of-type {
+	margin-bottom: 0;
+}
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
@@ -477,9 +480,8 @@ body.home #content {
 /* =Footer
 ----------------------------------------------- */
 footer {
-  margin: 4em 0 0 0;
+  margin: 1em 0 0 0;
 }
-
 
 
 /* =Homepage / projects / images
