@@ -9,7 +9,7 @@ get_header(); ?>
 
 <div id="primary" class="content-area">
 	<div id="content" class="site-content" role="main">
-    <p id="abstract">I am a Boston based professional software developer and artist. I bring together performance, comedy, filmmaking, visual arts, and code to create engaging experiences.</p>
+		<p>I am based in Boston. I create interactive public installations that allow participants to create their own novel visual and auditory experiences. I challenge participants to invest time and effort learning new systems collaboratively, and through that investment receive the pride of achievement, and the joy of connecting with others.</p>
 
     <?php 
 		query_posts('');		

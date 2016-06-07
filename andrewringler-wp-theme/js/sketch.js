@@ -5,7 +5,8 @@ var frameRate = 10;
 var time = 0;
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  var c = createCanvas(windowWidth, windowHeight);
+  c.id('entries-p5js-animation');
   colorMode(RGB, 255);
   frameRate(frameRate);
   blendMode(BLEND);
@@ -18,7 +19,8 @@ function draw() {
   if(w != windowWidth || h != windowHeight){
     w = windowWidth;
     h = windowHeight;
-    createCanvas(w, h);
+    var c = createCanvas(w, h);
+    c.id('entries-p5js-animation');
     background(255);
   }
   if(time % 5 == 0){
