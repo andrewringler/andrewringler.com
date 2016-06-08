@@ -9,7 +9,7 @@ get_header(); ?>
 
 <div id="primary" class="content-area">
 	<div id="content" class="site-content" role="main">
-		<p>I am based in Boston. I create interactive public installations that allow participants to create their own novel visual and auditory experiences. I challenge participants to invest time and effort learning new systems collaboratively, and through that investment receive the pride of achievement, and the joy of connecting with others.</p>
+		<p>All site content is listed below. Subjects include writing, technology, projects, films, lectures, and events since 2008. You can also click on a category to see all its entries.</p>
 
     <?php 
 		query_posts('');		
