@@ -35,3 +35,11 @@ First export Wordpress content from andrewringler.com to exports then:
 ### Plugins
 * Advanced Custom Fields
 * Force Regenerate Thumbnails
+
+### TODO
+* Performance:
+  * Switch to W3 Total Cache, seems to support browser caching for images. Should minify CSS, JS too.
+  * disable WP Minify, disable WP Super Cache
+  * Switch to JS asynchronous loading of WebFonts
+  * Switch all PNG image uploads to JPG
+  * https://developers.google.com/speed/pagespeed/
