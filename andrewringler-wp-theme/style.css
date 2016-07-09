@@ -4,7 +4,7 @@ Theme URI: https://github.com/andrewringler/andrewringler.com
 Author: Andrew Ringler
 Author URI: http://andrewringler.com
 Description: Theme for andrewringler.com
-Version: 0.5.7
+Version: 0.5.9
 License: GNU General Public License
 License URI: license.txt
 Tags:
@@ -112,8 +112,10 @@ textarea {
 	font-size: 1.6rem;
 	line-height: 1.5;
 
-	font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
+	/* Open Sans from Google Fonts
+	 * and simlar local fonts to avoid FOUT, http://cssfontstack.com/ */
+ 	font-family: 'Open Sans', Tahoma, Verdana, Segoe, sans-serif;	
+  font-weight: 300;
 }
 
 body {
@@ -778,26 +780,12 @@ object {
 
 
 
-/* =Font Loading
+/* =Fonts
 ----------------------------------------------- */
-.wf-loading h1,
-.wf-loading h2,
-.wf-loading h3,
-.wf-loading p,
-.wf-loading li,
-.wf-loading span,
-.wf-loading time {
-	opacity: 0;
-/*	font-family: sans-serif;*/
-}
 h1, h2, h3, p, li, span, time {
-	opacity: 1;
-	font-family: 'Open Sans', sans-serif;
-	-webkit-transition: opacity 0.15s ease-in-out;
-	-moz-transition: opacity 0.15s ease-in-out;
-	-ms-transition: opacity 0.15s ease-in-out;
-	-o-transition: opacity 0.15s ease-in-out;
-	transition: opacity 0.15s ease-in-out;
+	 /* Open Sans from Google Fonts
+	  * and simlar local fonts to avoid FOUT, http://cssfontstack.com/ */
+	font-family: 'Open Sans', Tahoma, Verdana, Segoe, sans-serif;	
 }
 
 

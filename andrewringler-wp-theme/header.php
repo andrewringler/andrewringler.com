@@ -14,15 +14,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
-<script>
-  WebFont.load({
-    google: {
-      families: ['Open+Sans:800,800italic,300,300italic,600:latin']
-    },
-	timeout: 2000 // Set the timeout to two seconds
-  });
-</script>
 
 <?php wp_head(); ?>
 </head>

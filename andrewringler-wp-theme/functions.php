@@ -8,7 +8,7 @@ flush_rewrite_rules(true);
  *
  * @package Andrew Ringler 2016
  */
-$VERSION = '0.5.7';
+$VERSION = '0.5.9';
 
 /**
  * Set the content width based on the theme's design and stylesheet.
@@ -134,6 +134,8 @@ function andrewringler_profile_2013_scripts() {
 	global $VERSION;
 
 	wp_enqueue_style( 'andrewringler_profile_2013-style', get_stylesheet_uri(), $VERSION);
+
+	wp_enqueue_style( 'andrewringler_google_fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:800,800italic,300,300italic,600,600italic', $VERSION);
 
 	wp_enqueue_script( 'andrewringler_profile_2013-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
