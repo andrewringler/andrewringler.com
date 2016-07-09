@@ -1,14 +1,14 @@
 <?php
 
 // https://codex.wordpress.org/Function_Reference/flush_rewrite_rules
-flush_rewrite_rules(true);
+//flush_rewrite_rules(true);
 
 /**
  * Andrew Ringler 2016 functions and definitions
  *
  * @package Andrew Ringler 2016
  */
-$VERSION = '0.5.9';
+$VERSION = '0.6';
 
 /**
  * Set the content width based on the theme's design and stylesheet.
@@ -151,15 +151,15 @@ function andrewringler_profile_2013_scripts() {
 	
 	if(is_home()) {
 		wp_enqueue_script( 'andrewringler_profile_2015-p5js-lib', get_template_directory_uri() . '/js/p5.min.js', array(), '20160607b', true );
-		wp_enqueue_script( 'andrewringler_profile_2015-squares-p5js', get_template_directory_uri() . '/js/sketch-squares.js', array('andrewringler_profile_2015-p5js-lib'), '20160607b', true );
+		wp_enqueue_script( 'andrewringler_profile_2015-squares-p5js', get_template_directory_uri() . '/js/sketch-squares.js', array('andrewringler_profile_2015-p5js-lib'), $VERSION, true );
 	}
 	if(is_page('entries')) {
 		wp_enqueue_script( 'andrewringler_profile_2015-p5js-lib', get_template_directory_uri() . '/js/p5.min.js', array(), '20160607b', true );
-		wp_enqueue_script( 'andrewringler_profile_2015-squares-p5js', get_template_directory_uri() . '/js/sketch-circles.js', array('andrewringler_profile_2015-p5js-lib'), '20160607b', true );
+		wp_enqueue_script( 'andrewringler_profile_2015-squares-p5js', get_template_directory_uri() . '/js/sketch-circles.js', array('andrewringler_profile_2015-p5js-lib'), $VERSION, true );
 	}
 	if(is_page('about')) {
 		wp_enqueue_script( 'andrewringler_profile_2015-p5js-lib', get_template_directory_uri() . '/js/p5.min.js', array(), '20160607b', true );
-		wp_enqueue_script( 'andrewringler_profile_2015-squares-p5js', get_template_directory_uri() . '/js/sketch-triangles.js', array('andrewringler_profile_2015-p5js-lib'), '20160607b', true );
+		wp_enqueue_script( 'andrewringler_profile_2015-squares-p5js', get_template_directory_uri() . '/js/sketch-triangles.js', array('andrewringler_profile_2015-p5js-lib'), $VERSION, true );
 	}
 	
 }

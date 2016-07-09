@@ -4,8 +4,14 @@ var h = 0;
 var frameRate = 10;
 var time = 0;
 
+/* leave room for vertical scrollbars on window edge
+ * since windowWidth does not include them */
+function adjustedWidth() {
+  return windowWidth-50;
+}
+
 function setup() {
-  var c = createCanvas(windowWidth, windowHeight);
+  var c = createCanvas(adjustedWidth(), windowHeight);
   c.id('entries-p5js-animation');
   colorMode(RGB, 255);
   frameRate(frameRate);
@@ -16,8 +22,8 @@ function setup() {
 }
 
 function draw() {
-  if(w != windowWidth || h != windowHeight){
-    w = windowWidth;
+  if(w != (adjustedWidth() || h != windowHeight){
+    w = adjustedWidth();
     h = windowHeight;
     var c = createCanvas(w, h);
     c.id('entries-p5js-animation');
