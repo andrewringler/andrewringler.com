@@ -8,7 +8,7 @@ flush_rewrite_rules(true);
  *
  * @package Andrew Ringler 2016
  */
-$VERSION = '0.5.6';
+$VERSION = '0.5.7';
 
 /**
  * Set the content width based on the theme's design and stylesheet.
@@ -149,15 +149,15 @@ function andrewringler_profile_2013_scripts() {
 	
 	if(is_home()) {
 		wp_enqueue_script( 'andrewringler_profile_2015-p5js-lib', get_template_directory_uri() . '/js/p5.min.js', array(), '20160607b', true );
-		wp_enqueue_script( 'andrewringler_profile_2015-squares-p5js', get_template_directory_uri() . '/js/sketch-squares.js', array(), '20160607b', true );
+		wp_enqueue_script( 'andrewringler_profile_2015-squares-p5js', get_template_directory_uri() . '/js/sketch-squares.js', array('andrewringler_profile_2015-p5js-lib'), '20160607b', true );
 	}
 	if(is_page('entries')) {
 		wp_enqueue_script( 'andrewringler_profile_2015-p5js-lib', get_template_directory_uri() . '/js/p5.min.js', array(), '20160607b', true );
-		wp_enqueue_script( 'andrewringler_profile_2015-squares-p5js', get_template_directory_uri() . '/js/sketch-circles.js', array(), '20160607b', true );
+		wp_enqueue_script( 'andrewringler_profile_2015-squares-p5js', get_template_directory_uri() . '/js/sketch-circles.js', array('andrewringler_profile_2015-p5js-lib'), '20160607b', true );
 	}
 	if(is_page('about')) {
 		wp_enqueue_script( 'andrewringler_profile_2015-p5js-lib', get_template_directory_uri() . '/js/p5.min.js', array(), '20160607b', true );
-		wp_enqueue_script( 'andrewringler_profile_2015-squares-p5js', get_template_directory_uri() . '/js/sketch-triangles.js', array(), '20160607b', true );
+		wp_enqueue_script( 'andrewringler_profile_2015-squares-p5js', get_template_directory_uri() . '/js/sketch-triangles.js', array('andrewringler_profile_2015-p5js-lib'), '20160607b', true );
 	}
 	
 }

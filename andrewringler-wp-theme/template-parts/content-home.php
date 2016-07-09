@@ -31,8 +31,8 @@
 					$width = $ratio * 400;
 					$width = $width . 'px';
 			}
-			$img_url = wp_get_attachment_image_src($img_id,'home-400w', true);							
-			$srcset = wp_get_attachment_image_srcset($img_id, array(400,400,800,800,1000,1000));
+			$img_url = wp_get_attachment_image_src($img_id,'home-400x400', true);							
+			$srcset = wp_get_attachment_image_srcset($img_id, array(200,200,400,400,800,800,1000,1000));
 			// adapted from wp-content/media.php
 			$alt_text = trim(strip_tags(get_post_meta($img_id, '_wp_attachment_image_alt', true)));
 			
