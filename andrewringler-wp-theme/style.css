@@ -99,6 +99,12 @@ a {
 	font-weight: 600;
 }
 
+
+
+
+
+
+
 /* =Global
 ----------------------------------------------- */
 
@@ -119,10 +125,24 @@ textarea {
 }
 
 body {
-  color: #333;
-	padding-left: 1em;
-  margin: 0.5em 2em 1em 2em;
+  color: #333;	
+	padding: 0; margin: 0;
 }
+#page {
+	position: relative;	
+	min-height: 100%;
+	min-height: 100vh;
+	margin: 0; padding: 0;
+}
+#main {
+	margin: 0 0.3em 8em /* leave room on bottom for footer */ 3em;						
+}
+#masthead {
+	margin: 0.5em 0.3em 0em 3em;								
+}
+
+
+
 
 /* Headings */
 h1,h2,h3,h4,h5,
@@ -364,6 +384,9 @@ a:active {
 	display: block;
 	margin: 0 auto;
 }
+.inline {
+	display: inline !important;
+}
 
 /* Text meant only for screen readers */
 .screen-reader-text {
@@ -488,8 +511,24 @@ body.home #content {
 
 /* =Footer
 ----------------------------------------------- */
-footer {
-  margin: 1em 0 0 0;
+#footer {
+	position: absolute;
+	left: 0; bottom: 0;
+	width: 100%;
+	
+  margin: 0; padding: 0;
+	background-color: steelblue;
+	color: white;
+}
+.footer-inner {
+	font-size: 0.8em; 
+	padding: 1em 1em 1em 3.75em /* 3/0.8 */;	
+}
+#footer a,#footer a:visited,#footer a:active,#footer h1,#footer h2,#footer h3,#footer h4,#footer h5,#footer h6 {
+	color: white;
+}
+#footer h2 {
+	display: inline;
 }
 
 
@@ -856,9 +895,17 @@ h1, h2, h3, p, li, span, time {
 	#content {
 	  max-width: 95%;
 	}
-	body {
-	   margin: 0.25em 0.3em 1em 0.1em;
+	#main {
+		margin: 0 0.3em 5em /* leave room on bottom for footer */ 1em;						
 	}
+	#masthead {
+		margin: 0.25em 0.3em 0em 1em;								
+	}
+	.footer-inner {
+		padding-left: 1.25em; /* 1/0.8 */	
+	}
+
+
 
 	body.home #profile-header {
 	  min-height: inherit;
