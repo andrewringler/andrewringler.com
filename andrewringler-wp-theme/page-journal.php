@@ -1,6 +1,7 @@
 <?php
 /**
- * Entries list
+ * Miscellaneous Journal entries list
+ * content from former blog
  *
  * @package Andrew Profile Theme 2013
  */
@@ -9,15 +10,14 @@ get_header(); ?>
 
 <div id="primary" class="content-area">
 	<div id="content" class="site-content" role="main">
-		<p>All project related site content is listed below. Subjects include talks, lectures, teaching, projects and events. You can also click on a category to see all its entries.</p>
+		<p>Miscellaneous journal style posts. Links to interesting projects, sites, writings, movie reviews and more since 2008.</p>
 
     <?php 
-		$journalid = get_term_by('name', 'journal', 'post_tag');
-		query_posts('tag__not_in='. $journalid->term_id);		
+		query_posts('tag=journal');		
 		if ( have_posts() ) : ?>
 
       <header>
-        <h1 class="page-title screen-reader-text">Entries</h1>
+        <h1 class="page-title screen-reader-text">Journal</h1>
       </header>
 
       <ul>
@@ -74,7 +74,10 @@ get_header(); ?>
         </li>
       <?php endwhile; ?>
     </ul>
-  <?php endif; ?>
+  <?php 
+	endif; 
+	wp_reset_query(); 
+	?>
 
 
 
