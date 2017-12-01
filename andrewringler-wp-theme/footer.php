@@ -13,7 +13,7 @@
 	<footer id="footer">	
 		<div class="footer-inner">
 			<span class="copyright">Copyright &copy; <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><h2 class="inline"><?php bloginfo( 'name' ); ?></h2></a> <?php echo date("Y");?></span> |
-			Cambridge, MA | <a href="mailto:public@andrewringler.com">public@andrewringler.com</a>			
+			Somerville, MA | <a href="mailto:public@andrewringler.com">public@andrewringler.com</a>			
 		</div>
 	</footer>
 	
