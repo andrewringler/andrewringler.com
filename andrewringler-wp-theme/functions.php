@@ -81,6 +81,10 @@ function andrewringler_profile_2013_setup() {
 endif; // andrewringler_profile_2013_setup
 add_action( 'after_setup_theme', 'andrewringler_profile_2013_setup' );
 
+/* http://crunchify.com/not-using-emoji-on-your-wordpress-blog-stop-loading-wp-emoji-release-min-js-and-css-file/ */
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
+
 /**
  * Setup the WordPress core custom background feature.
  *
