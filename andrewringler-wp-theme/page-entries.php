@@ -8,7 +8,7 @@
 get_header(); ?>
 
 <div id="primary" class="content-area">
-	<div id="content" class="site-content" role="main">
+	<div id="content" class="site-content page-entries" role="main">
 		<p>All project related site content is listed below. Subjects include talks, lectures, teaching, projects and events. You can also click on a category to see all its entries.</p>
 
     <?php 
@@ -63,7 +63,7 @@ get_header(); ?>
 									// adapted from wp-content/media.php
 									$alt_text = trim(strip_tags( get_post_meta($thumb_id, '_wp_attachment_image_alt', true)));
 								?>
-								<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+								<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>" class="homepage-sparkline-image-link">
 									<img src="<?php echo $thumb_url; ?>" class="homepage-sparkline-image" alt="<?php echo $alt_text; ?>" />								
 								</a>								
 								<?php									

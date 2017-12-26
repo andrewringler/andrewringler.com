@@ -4,7 +4,7 @@ Theme URI: https://github.com/andrewringler/andrewringler.com
 Author: Andrew Ringler
 Author URI: http://andrewringler.com
 Description: Theme for andrewringler.com
-Version: 0.6
+Version: 0.9.1
 License: GNU General Public License
 License URI: license.txt
 Tags:
@@ -689,6 +689,9 @@ li.home-post-title {
 .entry-content, p, li {
 	max-width: 40em;
 }
+.homepage-sparkline-image-link {
+	display: block;
+}
 
 /* =Asides
 ----------------------------------------------- */
@@ -879,15 +882,41 @@ h1, h2, h3, p, li, span, time {
 	}
 }
 
-@media only screen and (min-width: 1000px) {
-	/* show featured image sparkline horizontally */
-	.homepage-sparkline-image {
-		display: inline; position: static;
-		margin-left: 4px;
-		vertical-align: center;
-	}
+@media only screen and (min-width: 1200px) {
 	.entries-post-title {
 		min-width: 100%;
+		display: flex;
+		padding-left: 0;
+	}
+	.entries-post-date {
+		position: static;
+		width: 6em;
+		min-width: 6em;
+		line-height: 2;
+	}
+	.entries-post-title .cat-links {
+		flex-grow: 0;		
+	}
+	.entries-post-title .article-link {
+		flex-grow: 0;
+		align-self: flex-start;
+		white-space: nowrap;		
+	}
+	.homepage-sparkline-image {
+		height: inherit;
+		width: inherit;
+		max-width: inherit;
+	}
+	.homepage-sparkline-image-link {
+		display: inline; position: static;		
+		margin-left: 0.5em;
+		flex-shrink: 1;
+		overflow-x: hidden;
+		vertical-align: center;
+	}
+	#content.page-entries {
+		max-width: none;
+		margin-right; 2em;
 	}
 }
 
