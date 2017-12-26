@@ -962,3 +962,13 @@ h1, h2, h3, p, li, span, time {
 	#abstract { font-size: 1em; margin-bottom: 2em; }
 	.entry-title { line-height: 1.2em; font-size: 1.3em; }
 }
+
+@media only screen and (min-width: 35em) {
+	#footer .copyright-notice, #footer .location, #footer .contact {
+		display: inline;
+	}
+	#footer .copyright-notice:after,
+	#footer .location:after {
+		content: "|"; padding: 0 .5em;
+	}
+}
