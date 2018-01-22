@@ -58,11 +58,13 @@ void draw() {
 
 void mouseReleased() {
   startCreateCropRegion = false;
-  if (newTopLeft.x < newBottomRight.x && newTopLeft.y < newBottomRight.y) {
-    topLeft = newTopLeft;
-    bottomRight = newBottomRight;
-    if (srcImage != null) {
-      generateSlice(srcImage); // update sparkline
+  if (newTopLeft != null && newBottomRight != null) {
+    if (newTopLeft.x < newBottomRight.x && newTopLeft.y < newBottomRight.y) {
+      topLeft = newTopLeft;
+      bottomRight = newBottomRight;
+      if (srcImage != null) {
+        generateSlice(srcImage); // update sparkline
+      }
     }
   }
 }
